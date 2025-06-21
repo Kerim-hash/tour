@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
+"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body class="overflow-x-hidden scroll-smooth">
+    <div class="wrapper">
+      <section class="hero relative rounded-[40px] overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
+        <header
+          class="pt-[40px] pl-[40px] flex items-center justify-between lg:justify-start relative z-50"
+        >
+          <img src="./assets/logo.svg" alt="logo" class="w-[40px] h-[40px]" />
+
+          <button
+            id="burger"
+            class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
+            aria-label="Toggle menu"
+          >
+            <span class="block w-6 h-[2px] bg-white"></span>
+            <span class="block w-6 h-[2px] bg-white"></span>
+            <span class="block w-6 h-[2px] bg-white"></span>
+          </button>
+
+          <nav class="nav !ml-[30px] rounded-[40px] hidden lg:block">
+            <ul class="flex gap-[32px] items-center !px-[32px] !py-[24px]">
+              <li><a href="#home" class="nav-link">Home</a></li>
+              <li><a href="#discover" class="nav-link">Our tours</a></li>
+              <li><a href="#reviews" class="nav-link">Reviews</a></li>
+              <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div
+            id="sidebar"
+            class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 lg:hidden"
+          >
+            <button
+              id="closeSidebar"
+              class="absolute top-6 right-6 text-2xl"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+            <nav>
+              <ul class="flex flex-col gap-6 mt-12 text-lg">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li>
+                  <a href="#discover" class="hover:underline">Our tours</a>
+                </li>
+                <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Overlay -->
+          <div
+            id="overlay"
+            class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 lg:hidden"
+          ></div>
+        </header>
+
+        <div
+          class="relative flex items-center justify-center text-white h-[80vh]"
+        >
+          <div
+            class="absolute left-[20px] md:left-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]"
+          ></div>
+          <div
+            class="absolute right-[20px] md:right-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]"
+          ></div>
+
+          <div class="relative z-20 text-center px-6">
+            <p
+              class="text-[24px] sm:text-[32px] uppercase tracking-[12px] mb-3"
+              data-aos="fade-down"
+            >
+              Discover
+            </p>
+            <h1
+              class="text-[42px] sm:text-[64px] md:text-[92px] xl:text-[144px] font-bold mb-4 tracking-[-2px] uppercase"
+              data-aos="fade-up"
+            >
+              Kyrgyzstan
+            </h1>
+            <button
+              class="btn-link"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              onclick="document.getElementById('exploration').scrollIntoView({ behavior: 'smooth' })"
+            >
+              Start Your Journey
+            </button>
+          </div>
+        </div>
+      </section>
+      <main>
+        <section
+          id="exploration"
+          class="exploration relative flex flex-col lg:flex-row mt-[80px] lg:mt-[140px] gap-[40px] 2xl:gap-[80px]"
+        >
+          <div
+            class="absolute top-[-110%] left-0 w-full h-[160%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10"
+          ></div>
+
+          <div class="relative z-10 w-full lg:w-1/2">
+            <h2
+              data-aos="fade-right"
+              class="font-montserrat font-bold text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] leading-[110%] tracking-[-1px] uppercase text-[#878787]"
+            >
+              From
+              <span class="text-black">breathtaking mountains</span> to&nbsp;
+              <span class="text-black"
+                >ancient nomadic traditions&nbsp;&mdash;</span
+              >
+              explore the heart of&nbsp;Central Asia with local experts who
+              truly know the land
+            </h2>
+          </div>
+
+          <div
+            data-aos="fade-left"
+            class="relative z-10 w-full lg:w-1/2 flex flex-col sm:flex-row justify-between gap-4 overflow-hidden"
+          >
+            <img
+              class="rounded-[32px] sm:rounded-[40px] w-full sm:w-[49%] max-h-[400px] sm:max-h-[500px] lg:max-h-[620px] object-cover"
+              src="./assets/exploration-1.webp"
+              alt="exploration"
+            />
+            <img
+              class="rounded-[32px] sm:rounded-[40px] w-full sm:w-[49%] max-h-[400px] sm:max-h-[500px] lg:max-h-[620px] object-cover"
+              src="./assets/exploration-2.webp"
+              alt="exploration"
+            />
+          </div>
+        </section>
+
+        <section id="discover" class="discover mt-[120px] md:px-8">
+          <h2
+            class="font-montserrat font-bold text-[36px] sm:text-[48px] md:text-[64px] leading-[110%] tracking-[-1px] uppercase text-[#535353]"
+          >
+            discover your <span class="text-[#878787]">travel begins</span> here
+          </h2>
+
+          <div
+            class="discover-items grid grid-cols-1 md:grid-cols-2 gap-[40px] mt-[40px] md:mt-[80px]"
+          >
+            <div
+              class="discover-item bg-white rounded-[24px] md:rounded-[40px] shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+            >
+              <img
+                class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+                src="./assets/discover-3.webp"
+                alt="discover"
+              />
+              <h6 class="discover-title">
+                Trekking in the Tien Shan Mountains
+              </h6>
+              <p class="discover-desc">
+                Hike through dramatic alpine valleys, glacier-fed lakes, and
+                lush meadows...
+              </p>
+              <a class="discover-link flex items-center" href="#">
+                Learn more
+                <img
+                  src="./assets/arrow.svg"
+                  alt="arrow"
+                  class="h-[16px] w-[64px]"
+                />
+              </a>
+            </div>
+            <div
+              class="discover-item bg-white rounded-[24px] md:rounded-[40px] shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+            >
+              <img
+                class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+                src="./assets/discover-2.webp"
+                alt="discover"
+              />
+              <h6 class="discover-title">
+                Son-Kul Lake: Yurts, Nomads & Starry Skies
+              </h6>
+              <p class="discover-desc">
+                Escape to the serene beauty of Son-Kul — a remote mountain lake
+                where you’ll sleep in traditional yurts, ride horses with
+                nomads, and gaze at skies filled with stars. An unforgettable
+                step into Kyrgyzstan’s nomadic heritage.
+              </p>
+              <a class="discover-link flex items-center" href="#"
+                >Learn more
+                <img
+                  src="./assets/arrow.svg"
+                  alt="arrow"
+                  class="h-[16px] w-[64px]"
+                />
+              </a>
+            </div>
+            <div
+              class="discover-item bg-white rounded-[24px] md:rounded-[40px] shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+            >
+              <img
+                class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+                src="./assets/discover-1.webp"
+                alt="discover"
+              />
+              <h6 class="discover-title">
+                Cultural Tours in Bishkek, Osh & Karakol
+              </h6>
+              <p class="discover-desc">
+                Discover the cities of Kyrgyzstan through their markets,
+                architecture, Soviet history, and local cuisine. Meet artisans,
+                visit museums, and explore the blend of cultures that shape this
+                diverse country.
+              </p>
+              <a class="discover-link flex items-center" href="#"
+                >Learn more
+                <img
+                  src="./assets/arrow.svg"
+                  alt="arrow"
+                  class="h-[16px] w-[64px]"
+                />
+              </a>
+            </div>
+            <div
+              class="discover-item bg-white rounded-[24px] md:rounded-[40px] shadow-sm overflow-hidden transition duration-300 hover:shadow-md"
+            >
+              <img
+                class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+                src="./assets/discover-4.webp"
+                alt="discover"
+              />
+              <h6 class="discover-title">Nature + Cooking Classes</h6>
+              <p class="discover-desc">
+                Pair scenic travel with hands-on culture: hike through stunning
+                valleys, then learn to make traditional dishes like beshbarmak
+                or manty with local families. A flavorful way to experience
+                Kyrgyz life.
+              </p>
+              <a class="discover-link flex items-center" href="#"
+                >Learn more
+                <img
+                  src="./assets/arrow.svg"
+                  alt="arrow"
+                  class="h-[16px] w-[64px]"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="frame relative w-full h-[420px] sm:h-[540px] md:h-[700px] rounded-[24px] md:rounded-[40px] overflow-hidden mt-[100px] md:mt-[200px] bg-cover bg-no-repeat"
+          style="background-image: url('./assets/frame.jpg')"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-[rgba(61,61,61,0.5)] to-[rgba(61,61,61,0)] z-0"
+          ></div>
+
+          <div
+            class="relative z-10 px-4 sm:px-6 md:px-[50px] pt-[40px] sm:pt-[60px] md:pt-[80px]"
+          >
+            <h2
+              data-aos="flip-left"
+              class="font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[64px] leading-[110%] tracking-[-1px] md:tracking-[-2px] uppercase text-white max-w-full md:max-w-[800px]"
+            >
+              <span class="text-[#CFCFCF]">A Land of </span>Mountains, Nomads,
+              and Timeless Traditions
+            </h2>
+          </div>
+        </section>
+
+        <section
+          class="advantages flex flex-col xl:flex-row gap-[40px] md:gap-[80px] mt-[60px] md:mt-[120px] px-4"
+        >
+          <div class="advantages-info flex-1">
+            <p class="advantages-desc">
+              Nestled in the heart of Central Asia, Kyrgyzstan is a hidden gem
+              where ancient culture meets untouched nature. Over 90% of the
+              country is covered by mountains — including the majestic Tien Shan
+              range — making it a paradise for hikers, explorers, and adventure
+              seekers.
+            </p>
+            <p class="advantages-desc">
+              Beyond the landscapes, Kyrgyzstan is home to a rich nomadic
+              heritage. Experience warm hospitality in a yurt, taste traditional
+              dishes like lagman and beshbarmak, and witness time-honored
+              customs passed down through generations.
+            </p>
+            <p class="advantages-desc">
+              Whether you’re drawn to snow-capped peaks, crystal-clear lakes, or
+              cultural discovery — Kyrgyzstan offers a journey like no other.
+            </p>
+
+            <p class="text-[16px] sm:text-[18px] md:text-[20px] text-[#363636]">
+              Over 2,000 alpine lakes, including the famous Issyk-Kul
+            </p>
+          </div>
+
+          <div
+            class="advantages-images flex flex-col lg:flex-row relative flex-1"
+          >
+            <div
+              class="absolute top-0 left-[5%] w-full h-[120%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10"
+            ></div>
+
+            <img
+              class="advantages-image"
+              src="./assets/advantages-1.webp"
+              alt="advantages"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1500"
+            />
+            <img
+              class="advantages-image lg:!mt-[16px]"
+              src="./assets/advantages-2.webp"
+              alt="advantages"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            />
+            <img
+              class="advantages-image lg:!mt-[32px] object-left"
+              src="./assets/advantages-3.webp"
+              alt="advantages"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2500"
+            />
+          </div>
+        </section>
+
+        <section class="itinerary mt-[100px] md:mt-[200px] md:px-0">
+          <div
+            class="itinerary-block flex flex-col lg:flex-row gap-[24px] md:gap-[40px] mb-[60px] md:mb-[120px]"
+          >
+            <h5
+              class="itinerary-title text-[28px] sm:text-[36px] md:text-[64px]"
+            >
+              Over 2,000 alpine lakes, including the famous Issyk-Kul
+            </h5>
+            <img
+              class="itinerary-image w-full md:w-[800px] h-[240px] sm:h-[320px] md:h-[520px] rounded-[24px] md:rounded-[40px] object-cover"
+              src="./assets/itinerary-3.png"
+              alt="itinerary"
+            />
+          </div>
+
+          <div
+            class="itinerary-block flex flex-col lg:flex-row gap-[24px] md:gap-[40px] mb-[60px] md:mb-[120px]"
+          >
+            <h5
+              class="itinerary-title text-[28px] sm:text-[36px] md:text-[64px]"
+            >
+              Epic trekking and horseback routes through mountain passes
+            </h5>
+            <img
+              class="itinerary-image w-full md:w-[800px] h-[240px] sm:h-[320px] md:h-[520px] rounded-[24px] md:rounded-[40px] object-cover"
+              src="./assets/itinerary-2.png"
+              alt="itinerary"
+            />
+          </div>
+
+          <div
+            class="itinerary-block flex flex-col lg:flex-row gap-[24px] md:gap-[40px] mb-[60px] md:mb-[120px]"
+          >
+            <h5
+              class="itinerary-title text-[28px] sm:text-[36px] md:text-[64px]"
+            >
+              Authentic nomadic experiences in yurts
+            </h5>
+            <img
+              class="itinerary-image w-full md:w-[800px] h-[240px] sm:h-[320px] md:h-[520px] rounded-[24px] md:rounded-[40px] object-cover"
+              src="./assets/itinerary-1.png"
+              alt="itinerary"
+            />
+          </div>
+
+          <div
+            class="itinerary-block flex flex-col lg:flex-row gap-[24px] md:gap-[40px] mb-[60px] md:mb-[120px]"
+          >
+            <h5
+              class="itinerary-title text-[28px] sm:text-[36px] md:text-[64px]"
+            >
+              Friendly locals and vibrant traditions
+            </h5>
+            <img
+              class="itinerary-image w-full md:w-[800px] h-[240px] sm:h-[320px] md:h-[520px] rounded-[24px] md:rounded-[40px] object-cover"
+              src="./assets/itinerary-4.png"
+              alt="itinerary"
+            />
+          </div>
+        </section>
+
+        <section
+          class="about mt-[40px] md:mt-[200px] px-4 md:px-0"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+        >
+          <div class="about-inner w-full md:w-[80%] ml-auto">
+            <h2
+              class="about-title text-[32px] sm:text-[48px] md:text-[64px] mb-[24px] md:mb-[32px]"
+            >
+              About Us
+            </h2>
+            <h6
+              class="about-subtitle text-[20px] sm:text-[24px] md:text-[32px] mb-[16px] md:mb-[24px]"
+            >
+              We Are Passionate About Kyrgyzstan
+            </h6>
+            <p
+              class="about-desc text-[16px] sm:text-[20px] md:text-[32px] leading-[130%] text-[#616161]"
+            >
+              We’re a team of local guides and travel enthusiasts dedicated to
+              sharing the beauty, culture, and stories of Kyrgyzstan with the
+              world. With us, you’ll go beyond the guidebooks — safely,
+              comfortably, and authentically.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="reviews"
+          class="testimonials mt-[80px] md:mt-[140px] px-4 md:px-0"
+        >
+          <h2
+            class="testimonials-title text-[32px] sm:text-[48px] md:text-[64px]"
+          >
+            testimonials
+          </h2>
+          <h6
+            class="testimonials-subtitle text-[18px] sm:text-[24px] md:text-[32px] mt-[12px] md:mt-[16px]"
+          >
+            What Our Guests Say
+          </h6>
+
+          <div
+            class="testimonials-items flex flex-col md:flex-row gap-[40px] md:gap-[80px] mt-[40px] md:mt-[60px]"
+          >
+            <div
+              class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] bg-white rounded-[24px] md:rounded-[40px] flex-1"
+              data-aos="zoom-out-right"
+            >
+              <img
+                class="testimonials-avatar w-[120px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[180px] md:h-[240px] object-cover rounded-full mx-auto md:mx-0"
+                src="./assets/testimonials.jpg"
+                alt="testimonials"
+              />
+              <p
+                class="testimonials-desc text-[16px] sm:text-[20px] md:text-[24px] mt-[20px] text-[#616161] md:text-left"
+              >
+                "Incredible landscapes, cozy yurts, and the warmest people.
+                Thank you for everything!"
+              </p>
+              <p
+                class="testimonials-name text-[16px] sm:text-[20px] md:text-[24px] font-semibold text-[#616161] mt-[24px] text-center md:text-left"
+              >
+                — Tom, UK
+              </p>
+            </div>
+
+            <div
+              class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] bg-white rounded-[24px] md:rounded-[40px] flex-1"
+              data-aos="zoom-out-left"
+            >
+              <img
+                class="testimonials-avatar w-[120px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[180px] md:h-[240px] object-cover rounded-full mx-auto md:mx-0"
+                src="./assets/testimonials.jpg"
+                alt="testimonials"
+              />
+              <p
+                class="testimonials-desc text-[16px] sm:text-[20px] md:text-[24px] mt-[20px] text-[#616161] text-center md:text-left"
+              >
+                "This was the best travel experience I’ve ever had. Kyrgyzstan
+                amazed me — and the team made it all unforgettable!"
+              </p>
+              <p
+                class="testimonials-name text-[16px] sm:text-[20px] md:text-[24px] font-semibold text-[#616161] mt-[24px] text-center md:text-left"
+              >
+                — Anna, Germany
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          class="contact mt-[80px] md:mt-[140px] mb-[20px] md:mb-[60px] px-4 md:px-0"
+        >
+          <h2 class="contact-title text-[32px] sm:text-[48px] md:text-[64px]">
+            Contact Us
+          </h2>
+
+          <div
+            class="contact-inner relative rounded-[24px] md:rounded-[40px] overflow-hidden mt-[40px] md:mt-[80px] bg-[url('./assets/contact.jpg')] bg-cover bg-no-repeat bg-bottom h-[600px] sm:h-[800px] md:h-[900px] flex flex-col lg:flex-row gap-[32px] p-[24px] sm:p-[40px] md:p-[80px]"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-[rgba(61,61,61,0.5)] to-[rgba(61,61,61,0)] z-0"
+            ></div>
+
+            <h4
+              class="contact-subtitle text-white relative z-10 text-[24px] sm:text-[36px] md:text-[64px] uppercase font-bold leading-[110%] flex-1"
+            >
+              Discover Kyrgyzstan with us
+            </h4>
+
+            <form
+              class="contact-form relative z-10 flex flex-col gap-[16px] sm:gap-[24px] lg:gap-[32px] flex-1 w-full"
+            >
+              <input
+                class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
+                type="email"
+                placeholder="Email"
+              />
+              <input
+                class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
+                type="tel"
+                placeholder="Phone"
+              />
+              <textarea
+                class="h-[125px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] resize-none outline-none"
+                placeholder="Message"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn-link w-fit bg-white text-black text-[16px] font-semibold uppercase px-6 py-3 rounded-[12px] hover:bg-gray-200 transition"
+              >
+                Contact us
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="py-8 bg-[#2A2A2A] text-[#CCCCCC]">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row justify-between gap-12">
+          <div class="flex-1 text-secondary">
+            <h2 class="text-2xl font-semibold mb-4 text-primary">
+              Contact Information
+            </h2>
+            <p class="mb-3"><strong>Address:</strong> Bishkek, Kyrgyzstan</p>
+            <div class="mb-3 flex gap-1">
+              <strong>Phone:</strong>
+              <a href="tel:+996999990000" class="hover:underline">
+                +996 502 155 122
+              </a>
+            </div>
+            <div class="mb-3 flex gap-1">
+              <strong>Email:</strong>
+              <a href="mailto:contact@infinance.kg" class="hover:underline">
+                hello@yourcompany.kg
+              </a>
+            </div>
+          </div>
+
+          <div class="flex-1 text-secondary">
+            <h2 class="text-2xl font-semibold mb-4 text-primary">Navigation</h2>
+            <ul class="space-y-3">
+              <li><a href="#" class="hover:underline">Home</a></li>
+              <li><a href="#discover" class="hover:underline">Our tours</a></li>
+              <li><a href="#reviews" class="hover:underline">Reviews</a></li>
+              <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="flex-1">
+            <h2 class="text-2xl font-semibold mb-4 text-primary">Follow Us</h2>
+            <div class="flex space-x-4 justify-start">
+              <a
+                href="https://linkedin.com"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/linkedin.svg"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                href="https://twitter.com"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/twitter.svg"
+                  alt="Twitter"
+                />
+              </a>
+              <a
+                href="https://facebook.com"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const burger = document.getElementById("burger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    const openMenu = () => {
+      sidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    };
+
+    const closeMenu = () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    };
+
+    burger.addEventListener("click", openMenu);
+    closeSidebar.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    // 👇 Закрытие меню при клике на любую ссылку
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  </script>
+</html>
