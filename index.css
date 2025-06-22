@@ -114,13 +114,23 @@ html {
 }
 
 .advantages-image {
-  width: 180px;
-  height: 340px;
+  width: 105px;
+  height: 230px;
   object-fit: cover;
   border-radius: 24px;
   margin: 0 auto;
 }
-
+@media (min-width: 380px) {
+  .advantages-image {
+    width: 115px;
+  }
+}
+@media (min-width: 768px) {
+  .advantages-image {
+    width: 200px;
+    height: 400px;
+  }
+}
 @media (min-width: 1650px) {
   .advantages-image {
     width: 250px;
@@ -134,7 +144,6 @@ html {
 .advantages-images {
   display: flex;
   margin-top: 60px;
-  gap: 20px;
   justify-content: end;
 }
 .advantages-desc {
@@ -248,7 +257,10 @@ html {
 
 @media (width <= 640px) {
   .wrapper {
-    padding: 20px;
+    padding: 20px 16px;
+  }
+  .hero{
+    height: calc(100vh - 110px);
   }
   .btn-link {
     border-radius: 40px;

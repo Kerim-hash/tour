@@ -16,7 +16,7 @@
 https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 "></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="./assets/logo.svg" />
   <meta property="og:title" content="Kyrgyzstan - Discover" />
   <meta property="og:description" content="A Land of Mountains, Nomads, and Timeless Traditions" />
   <meta property="og:type" content="website" />
@@ -27,10 +27,58 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 
 <body class="overflow-x-hidden scroll-smooth">
   <div class="wrapper">
+    <header class="flex xl:hidden items-center justify-between xl:justify-start relative z-50 mb-[28px]">
+
+      <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px]" />
+
+      <button id="burger" class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
+        aria-label="Toggle menu">
+        <span class="block w-6 h-[2px] bg-black"></span>
+        <span class="block w-6 h-[2px] bg-black"></span>
+        <span class="block w-6 h-[2px] bg-black"></span>
+      </button>
+      <div id="sidebar"
+        class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 lg:hidden">
+        <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
+          &times;
+        </button>
+        <nav>
+          <ul class="flex flex-col gap-6 mt-12 text-lg">
+            <li>
+              <a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a>
+            </li>
+            <li>
+              <a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our
+                tours</a>
+            </li>
+            <li>
+              <a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
+            </li>
+          </ul>
+          <div class="language-switcher mt-5 ml-auto flex items-center gap-2 text-sm">
+            <button onclick="setLanguage('en')" id="btn-en"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+              EN
+            </button>
+            <span class="text-white/40 select-none">|</span>
+            <button onclick="setLanguage('ru')" id="btn-ru"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+              RU
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 lg:hidden opacity-[.4]"></div>
+    </header>
     <section class="hero relative rounded-[40px] overflow-hidden">
       <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-      <header class="pt-[40px] px-[40px] flex items-center justify-between lg:justify-start relative z-50">
-        <img src="./assets/logo.svg" alt="logo" class="w-[40px] h-[40px]" />
+      <header class="pt-[40px] px-[40px] items-center justify-between xl:justify-start relative z-50 hidden xl:flex">
+        <img src="./assets/logo.svg" alt="logo" class="w-[105px] h-[50px]" />
 
         <button id="burger" class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
           aria-label="Toggle menu">
@@ -39,7 +87,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           <span class="block w-6 h-[2px] bg-white"></span>
         </button>
 
-        <nav class="nav !ml-[30px] rounded-[40px] hidden lg:block">
+        <nav class="nav !ml-[30px] rounded-[40px] ">
           <ul class="flex gap-[32px] items-center !px-[32px] !py-[24px]">
             <li>
               <a href="#home" class="nav-link" data-lang-en="Home" data-lang-ru="Главная">Home</a>
@@ -55,8 +103,9 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             </li>
           </ul>
         </nav>
-        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm hidden lg:block">
-          <button  onclick="setLanguage('en')" id="btn-en"
+
+        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
+          <button onclick="setLanguage('en')" id="btn-en"
             class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
             EN
           </button>
@@ -66,43 +115,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             RU
           </button>
         </div>
-        <div id="sidebar"
-          class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 lg:hidden">
-          <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
-            &times;
-          </button>
-          <nav>
-            <ul class="flex flex-col gap-6 mt-12 text-lg">
-              <li>
-                <a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a>
-              </li>
-              <li>
-                <a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our
-                  tours</a>
-              </li>
-              <li>
-                <a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-              </li>
-              <li>
-                <a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-              </li>
-            </ul>
-            <div class="language-switcher mt-5 ml-auto flex items-center gap-2 text-sm">
-              <button  onclick="setLanguage('en')" id="btn-en"
-                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-                EN
-              </button>
-              <span class="text-white/40 select-none">|</span>
-              <button onclick="setLanguage('ru')" id="btn-ru"
-                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-                RU
-              </button>
-            </div>
-          </nav>
-        </div>
 
-        <!-- Overlay -->
-        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 lg:hidden opacity-[.4]"></div>
       </header>
 
       <div class="relative flex items-center justify-center text-white h-[80vh]">
@@ -134,7 +147,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
       <section id="exploration"
         class="exploration relative flex flex-col lg:flex-row mt-[80px] lg:mt-[140px] gap-[40px] 2xl:gap-[80px]">
         <div
-          class="absolute top-[-110%] left-0 w-full h-[160%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10">
+          class="absolute  top-[-20%] lg:top-[-90%] 2xl:top-[-110%] left-0 w-full h-[160%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10">
         </div>
 
         <div class="relative z-10 w-full">
@@ -169,7 +182,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 
         <div class="discover-items grid grid-cols-1 md:grid-cols-2 gap-[40px] mt-[40px] md:mt-[80px]">
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+            <img class="w-full h-[240px] rounded-[24px] md:rounded-[40px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
               src="./assets/discover-3.webp" alt="discover" />
             <h6 class="discover-title" data-lang-en="Trekking in the Tien Shan Mountains"
               data-lang-ru="Треккинг в горах Тянь-Шаня">
@@ -187,7 +200,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             </a>
           </div>
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+            <img class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
               src="./assets/discover-2.webp" alt="discover" data-lang-en="Son-Kul Lake with yurts"
               data-lang-ru="Озеро Сон-Куль с юртами" />
             <h6 class="discover-title" data-lang-en="Son-Kul Lake: Yurts, Nomads & Starry Skies"
@@ -207,9 +220,8 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
-
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] rounded-[24px] md:rounded-[40px] 2xl:h-[520px] object-cover"
               src="./assets/discover-1.webp" alt="discover" data-lang-en="Kyrgyz cities tour"
               data-lang-ru="Экскурсии по городам Кыргызстана" />
             <h6 class="discover-title" data-lang-en="Cultural Tours in Bishkek, Osh & Karakol"
@@ -229,9 +241,8 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
-
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+            <img class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
               src="./assets/discover-4.webp" alt="discover" data-lang-en="Kyrgyz cooking class"
               data-lang-ru="Мастер-класс по кыргызской кухне" />
             <h6 class="discover-title" data-lang-en="Nature + Cooking Classes"
@@ -270,7 +281,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
         </div>
       </section>
 
-      <section class="advantages flex flex-col xl:flex-row gap-[40px] md:gap-[80px] mt-[60px] md:mt-[120px] px-4">
+      <section class="advantages flex flex-col xl:flex-row gap-[40px] md:gap-[80px] mt-[60px] md:mt-[120px]">
         <div class="advantages-info flex-1">
           <p class="advantages-desc"
             data-lang-en="Nestled in the heart of Central Asia, Kyrgyzstan is a hidden gem where ancient culture meets untouched nature. Over 90% of the country is covered by mountains — including the majestic Tien Shan range — making it a paradise for hikers, explorers, and adventure seekers."
@@ -303,16 +314,16 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           </p>
         </div>
 
-        <div class="advantages-images flex flex-col lg:flex-row relative flex-1">
+        <div class="advantages-images flex gap-[9px] md:gap-[20px] relative flex-1">
           <div
-            class="absolute top-0 left-[5%] w-full h-[120%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10">
+            class="absolute top-0 hidden md:block left-[5%] w-full h-[120%] bg-[url('/assets/gradient.png')] bg-no-repeat bg-top bg-contain pointer-events-none -z-10">
           </div>
 
           <img class="advantages-image" src="./assets/advantages-1.webp" alt="advantages" data-aos="flip-left"
             data-aos-easing="ease-out-cubic" data-aos-duration="1500" />
-          <img class="advantages-image lg:!mt-[16px]" src="./assets/advantages-2.webp" alt="advantages"
+          <img class="advantages-image !mt-[16px]" src="./assets/advantages-2.webp" alt="advantages"
             data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" />
-          <img class="advantages-image lg:!mt-[32px] object-left" src="./assets/advantages-3.webp" alt="advantages"
+          <img class="advantages-image !mt-[32px] object-left" src="./assets/advantages-3.webp" alt="advantages"
             data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" />
         </div>
       </section>
@@ -400,7 +411,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 
         <div class="testimonials-items flex flex-col md:flex-row gap-[40px] md:gap-[80px] mt-[40px] md:mt-[60px]">
           <div
-            class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] bg-white rounded-[24px] md:rounded-[40px] flex-1"
+            class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] md:bg-white rounded-[24px] md:rounded-[40px] flex-1"
             data-aos="zoom-out-right">
             <img
               class="testimonials-avatar w-[120px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[180px] md:h-[240px] object-cover rounded-full mx-auto md:mx-0"
@@ -418,7 +429,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           </div>
 
           <div
-            class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] bg-white rounded-[24px] md:rounded-[40px] flex-1"
+            class="testimonials-item p-[24px] sm:p-[32px] md:p-[40px] md:bg-white rounded-[24px] md:rounded-[40px] flex-1"
             data-aos="zoom-out-left">
             <img
               class="testimonials-avatar w-[120px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[180px] md:h-[240px] object-cover rounded-full mx-auto md:mx-0"
