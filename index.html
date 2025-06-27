@@ -181,24 +181,31 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
         </h2>
 
         <div class="discover-items grid grid-cols-1 md:grid-cols-2 gap-[40px] mt-[40px] md:mt-[80px]">
-          <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] rounded-[24px] md:rounded-[40px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
-              src="./assets/discover-3.webp" alt="discover" />
-            <h6 class="discover-title" data-lang-en="Trekking in the Tien Shan Mountains"
-              data-lang-ru="Треккинг в горах Тянь-Шаня">
+          <div class="discover-item rounded-[24px] md:rounded-[40px] overflow-hidden transition duration-300">
+            <img
+              class="w-full h-[240px] rounded-[24px] md:rounded-[40px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
+              src="./assets/discover-3.webp"
+              alt="discover"
+            />
+            <h6 class="discover-title" data-lang-en="Trekking in the Tien Shan Mountains" data-lang-ru="Треккинг в горах Тянь-Шаня">
               Trekking in the Tien Shan Mountains
             </h6>
-            <p class="discover-desc"
-              data-lang-en="Hike through dramatic alpine valleys, glacier-fed lakes, and lush meadows..."
-              data-lang-ru="Пройдите через впечатляющие альпийские долины, ледниковые озера и пышные луга...">
-              Hike through dramatic alpine valleys, glacier-fed lakes, and
-              lush meadows...
+          
+            <p class="discover-desc">
+              Hike through dramatic alpine valleys, glacier-fed lakes, and lush meadows
+              <span class="extra-text block max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-sm text-gray-600">
+                This multi-day trek leads you through some of the most remote and pristine landscapes in Central Asia.
+                Be prepared for high-altitude passes, wildflowers, and nomadic encounters.
+              </span>
             </p>
-            <a class="discover-link flex items-center gap-2" href="#">
+          
+            <a class="discover-link flex items-center gap-2" href="./naryn.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
+          
+          
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
             <img class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
               src="./assets/discover-2.webp" alt="discover" data-lang-en="Son-Kul Lake with yurts"
@@ -215,7 +222,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               nomads, and gaze at skies filled with stars. An unforgettable
               step into Kyrgyzstan's nomadic heritage.
             </p>
-            <a class="discover-link flex items-center gap-2" href="#">
+            <a class="discover-link flex items-center gap-2" href="./naryn.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
@@ -236,7 +243,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               visit museums, and explore the blend of cultures that shape this
               diverse country.
             </p>
-            <a class="discover-link flex items-center gap-2" href="#">
+            <a class="discover-link flex items-center gap-2" href="./naryn.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
@@ -257,7 +264,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               or manty with local families. A flavorful way to experience
               Kyrgyz life.
             </p>
-            <a class="discover-link flex items-center gap-2" href="#">
+            <a class="discover-link flex items-center gap-2" href="./naryn.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
@@ -465,9 +472,10 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             Discover Kyrgyzstan with us
           </h4>
 
-          <form action="https://formcarry.com/s/lPIklPhR7xr"
+          <form    action="https://formcarry.com/s/h6KU621eJuG"
           method="POST"
-          enctype="multipart/form-data" class="contact-form relative z-10 flex flex-col gap-[16px] sm:gap-[24px] lg:gap-[32px] flex-1 w-full">
+          enctype="multipart/form-data"
+         class="contact-form relative z-10 flex flex-col gap-[16px] sm:gap-[24px] lg:gap-[32px] flex-1 w-full">
             <input
               name="name"
               class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
@@ -508,9 +516,14 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           </p>
           <div class="mb-3 flex gap-1">
             <strong data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
-            <a href="tel:+996700334499" class="hover:underline">
-              +996 700 334 499
+            <div class="flex flex-col gap-1"> 
+              <a href="tel:+996700334499" class="hover:underline">
+                +996 700 334 499
             </a>
+            <a href="tel:+996555644091" class="hover:underline">
+              +996 555 644 091
+            </a>
+          </div>
           </div>
           <div class="mb-3 flex gap-1">
             <strong>Email:</strong>
@@ -570,11 +583,29 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
+  document.querySelectorAll('.toggle-extra').forEach(button => {
+    button.addEventListener('click', () => {
+      const container = button.closest('.discover-item');
+      const extra = container.querySelector('.extra-text');
+      const text = button.querySelector('.lang-text');
+      const arrow = button.querySelector('img');
+
+      const isOpen = extra.classList.contains('max-h-0');
+
+      extra.classList.toggle('max-h-0');
+      extra.classList.toggle('max-h-[200px]');
+      arrow.classList.toggle('rotate-180');
+
+      if (isOpen) {
+        text.textContent = text.dataset.langRu === 'Подробнее' ? 'Скрыть' : 'Hide';
+      } else {
+        text.textContent = text.dataset.langRu;
+      }
+    });
+  });
   function setLanguage(lang) {
-    // Save preference to localStorage
     localStorage.setItem("language", lang);
 
-    // Update all elements with data-lang attributes
     document
       .querySelectorAll("[data-lang-en], [data-lang-ru]")
       .forEach((element) => {
@@ -582,24 +613,19 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
             element.placeholder = element.getAttribute(`data-lang-${lang}`);
           } else {
-            // Handle HTML content carefully
             const content = element.getAttribute(`data-lang-${lang}`);
             if (content.includes("<") && content.includes(">")) {
-              // Contains HTML - use innerHTML
               element.innerHTML = content;
             } else {
-              // Plain text - use textContent
               element.textContent = content;
             }
           }
         }
       });
 
-    // Update html lang attribute
     document.documentElement.lang = lang;
   }
 
-  // Check for saved language preference
   const savedLang = localStorage.getItem("language") || "en";
   setLanguage(savedLang);
   const burger = document.getElementById("burger");
@@ -623,7 +649,6 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
   closeSidebar.addEventListener("click", closeMenu);
   overlay.addEventListener("click", closeMenu);
 
-  // 👇 Закрытие меню при клике на любую ссылку
   const sidebarLinks = sidebar.querySelectorAll("a");
   const sidebarButton = sidebar.querySelectorAll("button");
   sidebarLinks.forEach((link) => {
