@@ -27,54 +27,83 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 
 <body class="overflow-x-hidden scroll-smooth">
   <div class="wrapper">
-    <header class="flex xl:hidden items-center justify-between xl:justify-start relative z-50 mb-[28px]">
+    <header id="stickyHeader"
+    class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full">
+   <div class="flex items-center gap-10">
 
-      <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
-
-      <button id="burger" class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
-        aria-label="Toggle menu">
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-      </button>
-      <div id="sidebar"
-        class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 lg:hidden">
-        <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
-          &times;
+     <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
+     <nav class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]">
+       <a href="#" class="px-6 py-2 bg-[#1C1C1C] text-center text-white rounded-[40px] cursor-pointer hover:bg-[#000] transition-all duration-300 ease-in-out"  data-lang-en="Home" data-lang-ru="Главная">Home</a>
+       <a href="#discover" class="px-6 py-2 bg-[#1C1C1C] text-center text-white rounded-[40px] cursor-pointer hover:bg-[#000] transition-all duration-300 ease-in-out"  data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
+       <a href="#reviews" class="px-6 py-2 bg-[#1C1C1C] text-center text-white rounded-[40px] cursor-pointer hover:bg-[#000] transition-all duration-300 ease-in-out"  data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
+       <a href="#contact" class="px-6 py-2 bg-[#1C1C1C] text-center text-white rounded-[40px] cursor-pointer hover:bg-[#000] transition-all duration-300 ease-in-out"  data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
+      </nav>
+    </div>
+  
+    <div class="hidden xl:flex items-center gap-4">
+      <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
+        <button onclick="setLanguage('en')" id="btn-en"
+          class="cursor-pointer text-black">
+          EN
         </button>
-        <nav>
-          <ul class="flex flex-col gap-6 mt-12 text-lg">
-            <li>
-              <a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a>
-            </li>
-            <li>
-              <a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our
-                tours</a>
-            </li>
-            <li>
-              <a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-            </li>
-            <li>
-              <a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-            </li>
-          </ul>
-          <div class="language-switcher mt-5 ml-auto flex items-center gap-2 text-sm">
-            <button onclick="setLanguage('en')" id="btn-en"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-              EN
-            </button>
-            <span class="text-white/40 select-none">|</span>
-            <button onclick="setLanguage('ru')" id="btn-ru"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-              RU
-            </button>
-          </div>
-        </nav>
+        <span class="text-black/40 select-none">|</span>
+        <button onclick="setLanguage('ru')" id="btn-ru"
+          class="cursor-pointer text-black">
+          RU
+        </button>
       </div>
-
-      <!-- Overlay -->
-      <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 lg:hidden opacity-[.4]"></div>
-    </header>
+      <a href="tel:+996700334499" class="hover:underline">
+        +996 700 334 499
+      </a>
+        <a
+        data-lang-ru="Связаться"
+        data-lang-en="Contact"
+        href="https://wa.me/996700334499"
+        class="px-6 py-2 bg-[#1C1C1C] text-center text-white rounded-[40px] cursor-pointer hover:bg-[#000] transition-all duration-300 ease-in-out"
+      >
+        Связаться
+      </a>
+    </div>
+  
+    <!-- Burger -->
+    <button id="burger" class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
+      aria-label="Toggle menu">
+      <span class="block w-6 h-[2px] bg-black"></span>
+      <span class="block w-6 h-[2px] bg-black"></span>
+      <span class="block w-6 h-[2px] bg-black"></span>
+    </button>
+  
+    <!-- Mobile sidebar -->
+    <div id="sidebar"
+      class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden">
+      <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
+        &times;
+      </button>
+      <nav>
+        <ul class="flex flex-col gap-6 mt-12 text-lg">
+          <li><a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+          <li><a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a></li>
+          <li><a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a></li>
+          <li><a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a></li>
+        </ul>
+        <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
+          <button onclick="setLanguage('en')" id="btn-en"
+            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+            EN
+          </button>
+          <span class="text-white/40 select-none">|</span>
+          <button onclick="setLanguage('ru')" id="btn-ru"
+            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+            RU
+          </button>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"></div>
+  </header>
+  
     <section class="hero relative rounded-[40px] overflow-hidden">
       <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
       <header class="pt-[40px] px-[40px] items-center justify-between xl:justify-start relative z-50 hidden xl:flex">
@@ -184,91 +213,88 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           <div class="discover-item rounded-[24px] md:rounded-[40px] overflow-hidden transition duration-300">
             <img
               class="w-full h-[240px] rounded-[24px] md:rounded-[40px] sm:h-[320px] md:h-[360px] 2xl:h-[520px] object-cover"
-              src="./assets/discover-3.webp"
-              alt="discover"
-            />
-            <h6
-            class="discover-title"
-            data-lang-en="CHUY REGION: «MOUNTAIN WATERFALLS AND NATURE ESCAPES»"
-            data-lang-ru="ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»"
-          >
-            ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»
-          </h6>
-          
-          <p
-            class="discover-desc"
-            data-lang-en="Comfortable road trip through scenic corners of Chuy region: from roaring mountain waterfalls to secluded valleys. All inclusive — one-day treks, horseback rides, kayaking, national treats, and workshops in a Kyrgyz village."
-            data-lang-ru="Комфортное автопутешествие по живописным уголкам Чуйской области: от шумных горных водопадов до уединённых долин. Всё включено — однодневные трекинги, прогулки на лошадях, каяки, национальные угощения и мастер-классы в кыргызской деревне."
-          >
-            Комфортное автопутешествие по живописным уголкам Чуйской области: от шумных горных водопадов до уединённых долин. Всё включено — однодневные трекинги, прогулки на лошадях, каяки, национальные угощения и мастер-классы в кыргызской деревне.
-          </p>
-          
-          
+              src="./assets/chuy-4.png" alt="discover" />
+            <h6 class="discover-title" data-lang-en="CHUY REGION: «MOUNTAIN WATERFALLS AND NATURE ESCAPES»"
+              data-lang-ru="ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»">
+              ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»
+            </h6>
+
+            <p class="discover-desc"
+              data-lang-en="Comfortable road trip through scenic corners of Chuy region: from roaring mountain waterfalls to secluded valleys. All inclusive — one-day treks, horseback rides, kayaking, national treats, and workshops in a Kyrgyz village."
+              data-lang-ru="Комфортное автопутешествие по живописным уголкам Чуйской области: от шумных горных водопадов до уединённых долин. Всё включено — однодневные трекинги, прогулки на лошадях, каяки, национальные угощения и мастер-классы в кыргызской деревне.">
+              Комфортное автопутешествие по живописным уголкам Чуйской области: от шумных горных водопадов до уединённых
+              долин. Всё включено — однодневные трекинги, прогулки на лошадях, каяки, национальные угощения и
+              мастер-классы в кыргызской деревне.
+            </p>
+
+
             <a class="discover-link flex items-center gap-2" href="./chuy.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
-          
-          
+
+
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
-              src="./assets/discover-2.webp" alt="discover" data-lang-en="Son-Kul Lake with yurts"
+            <img
+              class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
+              src="./assets/naryn.png" alt="discover" data-lang-en="Son-Kul Lake with yurts"
               data-lang-ru="Озеро Сон-Куль с юртами" />
-            <h6 class="discover-title"   data-lang-en="NARYN REGION: «ALPINE LAKES AND FORGOTTEN CARAVANS»"
+            <h6 class="discover-title" data-lang-en="NARYN REGION: «ALPINE LAKES AND FORGOTTEN CARAVANS»"
               data-lang-ru="НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»">
               НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»
             </h6>
-            <p
-            class="discover-desc"
-            data-lang-en="An exciting journey through Naryn region: visit Kel-Suu Lake in a rocky canyon near the Chinese border, the ancient caravanserai Tash-Rabat, alpine Kol-Ukok Lake surrounded by blooming meadows, and scenic waterfalls in Shirkat or Naryn Gorge."
-            data-lang-ru="Захватывающее путешествие по Нарынской области: к озеру Кёль-Суу в скальном каньоне у границы с Китаем, древнему караван-сараю Таш-Рабат, альпийскому озеру Кол-Укок среди цветущих лугов и живописным водопадам в Ширкате или Нарынском ущелье."
-          >
-            Захватывающее путешествие по Нарынской области: к озеру Кёль-Суу в скальном каньоне у границы с Китаем, древнему караван-сараю Таш-Рабат, альпийскому озеру Кол-Укок среди цветущих лугов и живописным водопадам в Ширкате или Нарынском ущелье.
-          </p>
+            <p class="discover-desc"
+              data-lang-en="An exciting journey through Naryn region: visit Kel-Suu Lake in a rocky canyon near the Chinese border, the ancient caravanserai Tash-Rabat, alpine Kol-Ukok Lake surrounded by blooming meadows, and scenic waterfalls in Shirkat or Naryn Gorge."
+              data-lang-ru="Захватывающее путешествие по Нарынской области: к озеру Кёль-Суу в скальном каньоне у границы с Китаем, древнему караван-сараю Таш-Рабат, альпийскому озеру Кол-Укок среди цветущих лугов и живописным водопадам в Ширкате или Нарынском ущелье.">
+              Захватывающее путешествие по Нарынской области: к озеру Кёль-Суу в скальном каньоне у границы с Китаем,
+              древнему караван-сараю Таш-Рабат, альпийскому озеру Кол-Укок среди цветущих лугов и живописным водопадам в
+              Ширкате или Нарынском ущелье.
+            </p>
             <a class="discover-link flex items-center gap-2" href="./naryn.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] md:h-[360px] rounded-[24px] md:rounded-[40px] 2xl:h-[520px] object-cover"
-              src="./assets/discover-1.webp" alt="discover" data-lang-en="Kyrgyz cities tour"
+            <img
+              class="w-full h-[240px] sm:h-[320px] md:h-[360px] rounded-[24px] md:rounded-[40px] 2xl:h-[520px] object-cover"
+              src="./assets/kol-1.png" alt="discover" data-lang-en="Kyrgyz cities tour"
               data-lang-ru="Экскурсии по городам Кыргызстана" />
-            <h6 class="discover-title" data-lang-en="Cultural Tours in Bishkek, Osh & Karakol"
-              data-lang-ru="Культурные туры по Бишкеку, Ошу и Караколу">
-              Cultural Tours in Bishkek, Osh & Karakol
+            <h6 class="discover-title" data-lang-en="ISYK-KUL REGION: «LAKE, MOUNTAINS, AND HOT SPRINGS»"
+              data-lang-ru="ЫСЫК-КУЛЬСКИЙ РЕГИОН: «ОЗЕРО, ГОРЫ И ГОРЯЧИЕ ИСТОЧНИКИ»">
+              ISYK-KUL REGION: «LAKE, MOUNTAINS, AND HOT SPRINGS»
             </h6>
             <p class="discover-desc"
-              data-lang-en="Discover the cities of Kyrgyzstan through their markets, architecture, Soviet history, and local cuisine. Meet artisans, visit museums, and explore the blend of cultures that shape this diverse country."
-              data-lang-ru="Откройте для себя города Кыргызстана через их рынки, архитектуру, советскую историю и местную кухню. Встречайтесь с ремесленниками, посещайте музеи и исследуйте смешение культур, формирующих эту уникальную страну.">
-              Discover the cities of Kyrgyzstan through their markets,
-              architecture, Soviet history, and local cuisine. Meet artisans,
-              visit museums, and explore the blend of cultures that shape this
-              diverse country.
+              data-lang-en="Discover the magic of Issyk-Kul — the 'Pearl of the Tien Shan'. Swim in crystal-clear lake waters, explore the red cliffs of Skazka Canyon, and relax in the natural hot springs of Altyn-Arashan. Visit Karakol for culture, cuisine, and mountain views. A perfect blend of nature, adventure, and tradition."
+              data-lang-ru="Откройте для себя волшебство Иссык-Куля — «Жемчужины Тянь-Шаня». Купайтесь в кристально чистых водах озера, исследуйте красные скалы каньона Сказка и отдыхайте в горячих источниках Алтын-Арашан. Посетите Каракол с его культурой, кухней и видами на горы. Идеальное сочетание природы, приключений и традиций.">
+              Откройте для себя волшебство Иссык-Куля — «Жемчужины Тянь-Шаня». Купайтесь в кристально чистых водах
+              озера, исследуйте красные скалы каньона Сказка и отдыхайте в горячих источниках Алтын-Арашан. Посетите
+              Каракол с его культурой, кухней и видами на горы. Идеальное сочетание природы, приключений и традиций.
             </p>
-            <a class="discover-link flex items-center gap-2" href="./southern-region.html">
+            <a class="discover-link flex items-center gap-2" href="./kol.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
           </div>
           <div class="discover-item rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
-            <img class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
-              src="./assets/discover-4.webp" alt="discover" data-lang-en="Kyrgyz cooking class"
+            <img
+              class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
+              src="./assets/southern-1.png" alt="discover" data-lang-en="Kyrgyz cooking class"
               data-lang-ru="Мастер-класс по кыргызской кухне" />
-            <h6 class="discover-title" data-lang-en="Nature + Cooking Classes"
-              data-lang-ru="Природа + Кулинарные Мастер-классы">
-              Nature + Cooking Classes
+            <h6 class="discover-title" data-lang-en="SOUTH REGION (OSH, JALAL-ABAD): «CULTURE AND NATURE OF THE SOUTH»"
+              data-lang-ru="ЮЖНЫЙ РЕГИОН (ОШ, ДЖАЛАЛ-АБАД): «КУЛЬТУРА И ПРИРОДА ЮГА»">
+              SOUTH REGION (OSH, JALAL-ABAD): «CULTURE AND NATURE OF THE SOUTH»
             </h6>
             <p class="discover-desc"
-              data-lang-en="Pair scenic travel with hands-on culture: hike through stunning valleys, then learn to make traditional dishes like beshbarmak or manty with local families. A flavorful way to experience Kyrgyz life."
-              data-lang-ru="Сочетайте живописные путешествия с культурным погружением: прогуляйтесь по потрясающим долинам, а затем научитесь готовить традиционные блюда, такие как бешбармак или манты, с местными семьями. Вкусный способ познакомиться с жизнью Кыргызстана.">
-              Pair scenic travel with hands-on culture: hike through stunning
-              valleys, then learn to make traditional dishes like beshbarmak
-              or manty with local families. A flavorful way to experience
-              Kyrgyz life.
+              data-lang-en="Journey to the vibrant south of Kyrgyzstan — home to sacred mountains, ancient mausoleums, and vast walnut forests. Explore Osh, one of the oldest cities in Central Asia, visit the UNESCO-listed Sulayman-Too, and trek through the Arslanbob forest. Discover alpine lakes like Sary-Chelek and the serene beauty of the Chychkan Gorge. A cultural and natural mosaic of the Kyrgyz south."
+              data-lang-ru="Отправьтесь в увлекательное путешествие по югу Кыргызстана — региону священных гор, древних мавзолеев и величественных ореховых лесов. Исследуйте Ош — один из старейших городов Центральной Азии, поднимитесь на Сулейман-Тоо и пройдитесь по лесам Арсланбоба. Полюбуйтесь озером Сары-Челек и еловыми склонами Чычканского ущелья. Мозаика природы и культуры юга Кыргызстана.">
+              Отправьтесь в увлекательное путешествие по югу Кыргызстана — региону священных гор, древних мавзолеев и
+              величественных ореховых лесов. Исследуйте Ош — один из старейших городов Центральной Азии, поднимитесь на
+              Сулейман-Тоо и пройдитесь по лесам Арсланбоба. Полюбуйтесь озером Сары-Челек и еловыми склонами
+              Чычканского ущелья. Мозаика природы и культуры юга Кыргызстана.
             </p>
-            <a class="discover-link flex items-center gap-2" href="./kol.html">
+            <a class="discover-link flex items-center gap-2" href="./southern-region.html">
               <span class="lang-text" data-lang-en="Learn more" data-lang-ru="Подробнее">Learn more</span>
               <img src="./assets/arrow.svg" alt="arrow" class="h-[16px] w-[64px]" />
             </a>
@@ -476,24 +502,18 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             Discover Kyrgyzstan with us
           </h4>
 
-          <form    action="https://formcarry.com/s/h6KU621eJuG"
-          method="POST"
-          enctype="multipart/form-data"
-         class="contact-form relative z-10 flex flex-col gap-[16px] sm:gap-[24px] lg:gap-[32px] flex-1 w-full">
-            <input
-              name="name"
+          <form action="https://formcarry.com/s/h6KU621eJuG" method="POST" enctype="multipart/form-data"
+            class="contact-form relative z-10 flex flex-col gap-[16px] sm:gap-[24px] lg:gap-[32px] flex-1 w-full">
+            <input name="name"
               class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
               type="text" placeholder="Name" data-lang-en="Name" data-lang-ru="Имя" />
-            <input
-              name="email"
+            <input name="email"
               class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
               type="email" placeholder="Email" data-lang-en="Email" data-lang-ru="Эл. почта" />
-            <input
-              name="phone"
+            <input name="phone"
               class="h-[45px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] outline-none"
               type="tel" placeholder="Phone" data-lang-en="Phone" data-lang-ru="Телефон" />
-            <textarea
-              name="message"
+            <textarea name="message"
               class="h-[125px] w-full rounded-[16px] bg-[rgba(247,247,247,0.6)] backdrop-blur-xl px-4 py-2 text-[14px] sm:text-[16px] uppercase placeholder:text-[#333] resize-none outline-none"
               placeholder="Message" data-lang-en="Message" data-lang-ru="Сообщение"></textarea>
             <button type="submit"
@@ -516,18 +536,19 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
           </h2>
           <p class="mb-3">
             <strong data-lang-en="Address:" data-lang-ru="Адрес:">Address:</strong>
-            <span data-lang-en="15 Baba-Ata Street, Bishkek" data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15">15 Baba-Ata Street, Bishkek</span>
+            <span data-lang-en="15 Baba-Ata Street, Bishkek" data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15">15 Baba-Ata
+              Street, Bishkek</span>
           </p>
           <div class="mb-3 flex gap-1">
             <strong data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
-            <div class="flex flex-col gap-1"> 
+            <div class="flex flex-col gap-1">
               <a href="tel:+996700334499" class="hover:underline">
                 +996 700 334 499
-            </a>
-            <a href="tel:+996555644091" class="hover:underline">
-              +996 555 644 091
-            </a>
-          </div>
+              </a>
+              <a href="tel:+996555644091" class="hover:underline">
+                +996 555 644 091
+              </a>
+            </div>
           </div>
           <div class="mb-3 flex gap-1">
             <strong>Email:</strong>
@@ -641,12 +662,14 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
     sidebar.classList.remove("-translate-x-full");
     overlay.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
+    header.classList.add('h-screen')
   };
 
   const closeMenu = () => {
     sidebar.classList.add("-translate-x-full");
     overlay.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
+    header.classList.remove('h-screen')
   };
 
   burger.addEventListener("click", openMenu);
@@ -660,6 +683,21 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
   });
   sidebarButton.forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  let lastScrollY = window.scrollY;
+  const header = document.getElementById('stickyHeader');
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      header.classList.remove('-translate-y-full');
+    } else {
+      header.classList.add('-translate-y-full');
+    }
+
+    lastScrollY = currentScrollY;
   });
 </script>
 
