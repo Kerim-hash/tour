@@ -1,541 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="./index.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="
 https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 "></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
-  <meta property="og:title" content="Kyrgyzstan - Discover" />
-  <meta property="og:description" content="A Land of Mountains, Nomads, and Timeless Traditions" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/hero.jpg" />
-  <meta name="format-detection" content="telephone=no" />
-  <title>Tour</title>
-</head>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <meta property="og:title" content="Kyrgyzstan - Discover" />
+    <meta
+      property="og:description"
+      content="A Land of Mountains, Nomads, and Timeless Traditions"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/hero.jpg" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Tour</title>
+  </head>
 
-<body class="overflow-x-hidden scroll-smooth">
-  <div class="wrapper">
-    <header id="stickyHeader"
-      class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full">
-      <div class="flex items-center gap-10">
-
-        <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
-        <nav class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]">
-          <a href="./index.html"
-            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
-            data-lang-en="Home" data-lang-ru="Главная">Home</a>
-          <a href="./index.html#discover"
-            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
-            data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
-          <a href="./index.html#reviews"
-            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
-            data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-          <a href="./index.html#contact"
-            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
-            data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-        </nav>
-      </div>
-
-      <div class="hidden xl:flex items-center gap-4">
-        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
-          <button onclick="setLanguage('en')" id="btn-en" class="cursor-pointer text-black">
-            EN
-          </button>
-          <span class="text-black/40 select-none">|</span>
-          <button onclick="setLanguage('ru')" id="btn-ru" class="cursor-pointer text-black">
-            RU
-          </button>
+  <body class="overflow-x-hidden scroll-smooth">
+    <div class="wrapper">
+      <header
+        id="stickyHeader"
+        class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full"
+      >
+        <div class="flex items-center gap-10">
+          <img
+            src="./assets/logo.svg"
+            alt="logo"
+            class="w-[80px] h-[40px] rounded-[24px] object-contain"
+          />
+          <nav
+            class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]"
+          >
+            <a
+              href="./index.html"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Home"
+              data-lang-ru="Главная"
+              >Home</a
+            >
+            <a
+              href="./index.html#discover"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Our tours"
+              data-lang-ru="Наши туры"
+              >Our tours</a
+            >
+            <a
+              href="./index.html#reviews"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Reviews"
+              data-lang-ru="Отзывы"
+              >Reviews</a
+            >
+            <a
+              href="./index.html#contact"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Contact"
+              data-lang-ru="Контакты"
+              >Contact</a
+            >
+          </nav>
         </div>
-        <a href="tel:+996700334499" class="hover:underline">
-          +996 700 334 499
-        </a>
-        <a data-lang-ru="Связаться" data-lang-en="Contact" href="https://wa.me/996700334499"
-          class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out">
-          Связаться
-        </a>
-      </div>
 
-      <!-- Burger -->
-      <button id="burger" class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
-        aria-label="Toggle menu">
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-      </button>
-
-      <!-- Mobile sidebar -->
-      <div id="sidebar"
-        class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden">
-        <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
-          &times;
-        </button>
-        <nav>
-          <ul class="flex flex-col gap-6 mt-12 text-lg">
-            <li><a href="./index.html" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
-            <li><a href="./index.html#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our
-                tours</a></li>
-            <li><a href="./index.html#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a></li>
-            <li><a href="./index.html#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-            </li>
-          </ul>
-          <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
-            <button onclick="setLanguage('en')" id="btn-en"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+        <div class="hidden xl:flex items-center gap-4">
+          <div
+            class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm"
+          >
+            <button
+              onclick="setLanguage('en')"
+              id="btn-en"
+              class="cursor-pointer text-black"
+            >
               EN
             </button>
-            <span class="text-white/40 select-none">|</span>
-            <button onclick="setLanguage('ru')" id="btn-ru"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+            <span class="text-black/40 select-none">|</span>
+            <button
+              onclick="setLanguage('ru')"
+              id="btn-ru"
+              class="cursor-pointer text-black"
+            >
               RU
             </button>
           </div>
-        </nav>
-      </div>
+          <a href="tel:+996700334499" class="hover:underline">
+            +996 700 334 499
+          </a>
+          <a
+            data-lang-ru="Связаться с нами"
+            data-lang-en="Contact"
+            href="https://wa.me/996700334499"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+          >
+          Связаться с нами
+          </a>
+        </div>
 
-      <!-- Overlay -->
-      <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"></div>
-    </header>
-    <section class="hero relative rounded-[40px] overflow-hidden">
-      <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-      <header class="pt-[40px] px-[40px] items-center justify-between xl:justify-start relative z-50 hidden xl:flex">
-        <img src="./assets/logo.png" alt="logo" class="w-[105px] h-[50px] rounded-[24px] object-cover" />
-
-        <button id="burger" class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
-          aria-label="Toggle menu">
-          <span class="block w-6 h-[2px] bg-white"></span>
-          <span class="block w-6 h-[2px] bg-white"></span>
-          <span class="block w-6 h-[2px] bg-white"></span>
+        <!-- Burger -->
+        <button
+          id="burger"
+          class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
+          aria-label="Toggle menu"
+        >
+          <span class="block w-6 h-[2px] bg-black"></span>
+          <span class="block w-6 h-[2px] bg-black"></span>
+          <span class="block w-6 h-[2px] bg-black"></span>
         </button>
 
-        <nav class="nav !ml-[30px] rounded-[40px]">
-          <ul class="flex gap-[32px] items-center !px-[32px] !py-[24px]">
-            <li>
-              <a href="./index.html" class="nav-link" data-lang-en="Home" data-lang-ru="Главная">Home</a>
-            </li>
-            <li>
-              <a href="#discover" class="nav-link" data-lang-en="Our tours" data-lang-ru="Туры">Our tours</a>
-            </li>
-            <li>
-              <a href="#reviews" class="nav-link" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-            </li>
-            <li>
-              <a href="#contact" class="nav-link" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm">
-          <button onclick="setLanguage('en')" id="btn-en"
-            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-            EN
+        <!-- Mobile sidebar -->
+        <div
+          id="sidebar"
+          class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden"
+        >
+          <button
+            id="closeSidebar"
+            class="absolute top-6 right-6 text-2xl"
+            aria-label="Close menu"
+          >
+            &times;
           </button>
-          <span class="text-white/40 select-none">|</span>
-          <button onclick="setLanguage('ru')" id="btn-ru"
-            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
-            RU
-          </button>
+          <nav>
+            <ul class="flex flex-col gap-6 mt-12 text-lg">
+              <li>
+                <a
+                  href="./index.html"
+                  class="hover:underline"
+                  data-lang-en="Home"
+                  data-lang-ru="Главная"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#discover"
+                  class="hover:underline"
+                  data-lang-en="Our tours"
+                  data-lang-ru="Наши туры"
+                  >Our tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#reviews"
+                  class="hover:underline"
+                  data-lang-en="Reviews"
+                  data-lang-ru="Отзывы"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#contact"
+                  class="hover:underline"
+                  data-lang-en="Contact"
+                  data-lang-ru="Контакты"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+            <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
+              <button
+                onclick="setLanguage('en')"
+                id="btn-en"
+                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+              >
+                EN
+              </button>
+              <span class="text-white/40 select-none">|</span>
+              <button
+                onclick="setLanguage('ru')"
+                id="btn-ru"
+                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+              >
+                RU
+              </button>
+            </div>
+          </nav>
         </div>
+
+        <!-- Overlay -->
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"
+        ></div>
       </header>
+      <section class="hero relative rounded-[40px] overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
+        <header
+          class="pt-[40px] px-[40px] items-center justify-between xl:justify-start relative z-50 hidden xl:flex"
+        >
+          <img
+            src="./assets/logo.png"
+            alt="logo"
+            class="w-[105px] h-[50px] rounded-[24px] object-cover"
+          />
 
-      <div class="relative flex items-center justify-center text-white h-[80vh]">
-        <div
-          class="absolute left-[20px] md:left-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]">
-        </div>
-        <div
-          class="absolute right-[20px] md:right-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]">
-        </div>
-
-        <div class="relative z-20 text-center px-6">
-          <p class="text-[24px] sm:text-[32px] uppercase tracking-[12px] mb-3" data-aos="fade-down"
-            data-lang-en="Discover" data-lang-ru="Откройте для себя">
-            Discover
-          </p>
-          <h1 class="text-[42px] sm:text-[64px] md:text-[92px] xl:text-[144px] font-bold mb-4 tracking-[-2px] uppercase"
-            data-aos="fade-up">
-            Kyrgyzstan
-          </h1>
-          <button class="btn-link" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-            onclick="document.getElementById('exploration').scrollIntoView({ behavior: 'smooth' })"
-            data-lang-en="Start Your Journey" data-lang-ru="Начать путешествие">
-            Start Your Journey
+          <button
+            id="burger"
+            class="lg:hidden w-10 h-5 flex flex-col justify-between items-center"
+            aria-label="Toggle menu"
+          >
+            <span class="block w-6 h-[2px] bg-white"></span>
+            <span class="block w-6 h-[2px] bg-white"></span>
+            <span class="block w-6 h-[2px] bg-white"></span>
           </button>
-        </div>
-      </div>
-    </section>
-    <main>
-      <section class="mt-[120px]">
-        <h2
-          class="font-montserrat font-bold text-[36px] sm:text-[48px] md:text-[64px] leading-[110%] tracking-[-1px] uppercase text-[#1C1C1C]"
-          data-lang-en="NARYN REGION: «ALPINE LAKES AND FORGOTTEN CARAVANS»"
-          data-lang-ru=" НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»">
-          НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»
-        </h2>
-        <div class="flex flex-col md:flex-row gap-10 mt-[80px]">
-          <div class="w-full md:w-1/2">
-            <div class="swiper mainSwiper rounded-xl overflow-hidden w-full max-w-[800px] h-[400px] 2xl:h-[520px]">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="./assets/naryn.png" alt="Tour Image" class="w-full h-full object-cover" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/naryn-1.png" alt="Tour Image" class="w-full h-full object-cover" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/naryn-2.png" alt="Tour Image" class="w-full h-full object-cover" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/naryn-3.png" alt="Tour Image" class="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
 
-            <div class="swiper thumbSwiper mt-4 max-w-[800px]">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide !w-[175px] !h-[125px] cursor-pointer">
-                  <img src="./assets/naryn.png" class="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div class="swiper-slide !w-[175px] !h-[125px] cursor-pointer">
-                  <img src="./assets/naryn-1.png" class="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div class="swiper-slide !w-[175px] !h-[125px] cursor-pointer">
-                  <img src="./assets/naryn-2.png" class="w-full h-full object-cover rounded-lg" />
-                </div>
-                <div class="swiper-slide !w-[175px] !h-[125px] cursor-pointer">
-                  <img src="./assets/naryn-3.png" class="w-full h-full object-cover rounded-lg" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav class="nav !ml-[30px] rounded-[40px]">
+            <ul class="flex gap-[32px] items-center !px-[32px] !py-[24px]">
+              <li>
+                <a
+                  href="./index.html"
+                  class="nav-link"
+                  data-lang-en="Home"
+                  data-lang-ru="Главная"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#discover"
+                  class="nav-link"
+                  data-lang-en="Our tours"
+                  data-lang-ru="Туры"
+                  >Our tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#reviews"
+                  class="nav-link"
+                  data-lang-en="Reviews"
+                  data-lang-ru="Отзывы"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="nav-link"
+                  data-lang-en="Contact"
+                  data-lang-ru="Контакты"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
 
           <div
-            class="w-full h-fit md:w-1/2 flex flex-col justify-start gap-4 bg-[#F3F3F3] p-[22px] md:p-[32px] rounded-[24px] border-[1px] border-[#D9D9D9]">
-            <div class="font-medium text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней" data-lang-en="Days">
-              Дней
-            </div>
-            <div class="flex items-center gap-4 font-medium text-[24px]">
-              <img src="./assets/sun.svg" alt="sun" />
-              <span data-lang-ru="7 дней" data-lang-en="7 days"> 7 дней</span>
-              <img src="./assets/moon.svg" alt="sun" />
-              <span data-lang-ru="6 ночей" data-lang-en="6 nights">
-                6 ночей</span>
-            </div>
-            <div class="font-medium text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Уровень"
-              data-lang-en="Level">
-              Уровень
-            </div>
-            <div class="font-medium text-[24px]" data-lang-ru="Легкий - Средний" data-lang-en="Easy – Moderate">
-              Легкий - Средний
-            </div>
-            <div class="font-medium text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Стоимость:"
-              data-lang-en="Price:">
-              Стоимость:
-            </div>
-            <div class="font-medium text-[24px]">
-              1 200 USD (~105 600 KGS)
-            </div>
-            <a data-lang-ru="Связаться" data-lang-en="Contact" href="https://wa.me/996700334499"
-              class="mt-6 px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out">
-              Связаться
-            </a>
+            class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm"
+          >
+            <button
+              onclick="setLanguage('en')"
+              id="btn-en"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+            >
+              EN
+            </button>
+            <span class="text-white/40 select-none">|</span>
+            <button
+              onclick="setLanguage('ru')"
+              id="btn-ru"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+            >
+              RU
+            </button>
+          </div>
+        </header>
+
+        <div
+          class="relative flex items-center justify-center text-white h-[80vh]"
+        >
+          <div
+            class="absolute left-[20px] md:left-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]"
+          ></div>
+          <div
+            class="absolute right-[20px] md:right-[80px] top-1/2 -translate-y-1/2 h-[320px] w-[1px] bg-[rgba(255,255,255,1)]"
+          ></div>
+
+          <div class="relative z-20 text-center px-6">
+            <p
+              class="text-[24px] sm:text-[32px] uppercase tracking-[12px] mb-3"
+              data-aos="fade-down"
+              data-lang-en="Discover"
+              data-lang-ru="Откройте для себя"
+            >
+              Discover
+            </p>
+            <h1
+              class="text-[42px] sm:text-[64px] md:text-[92px] xl:text-[144px] font-bold mb-4 tracking-[-2px] uppercase"
+              data-aos="fade-up"
+            >
+              Kyrgyzstan
+            </h1>
+            <button
+              class="btn-link"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              onclick="document.getElementById('exploration').scrollIntoView({ behavior: 'smooth' })"
+              data-lang-en="Start Your Journey"
+              data-lang-ru="Начать путешествие"
+            >
+              Start Your Journey
+            </button>
           </div>
         </div>
       </section>
-      <section class="mt-[80px] md:mt-[120px]">
-        <div>
-          <h2 class="text-[32px] text-[#235852] font-bold mb-10" data-lang-en="Key Locations:" data-lang-ru="Ключевые локации:">
-            Ключевые локации:
+      <main>
+        <section class="mt-[120px]">
+          <h2
+            class="font-montserrat font-bold text-[36px] sm:text-[48px] md:text-[64px] leading-[110%] tracking-[-1px] uppercase text-[#1C1C1C]"
+            data-lang-en="NARYN REGION: «ALPINE LAKES AND FORGOTTEN CARAVANS»"
+            data-lang-ru=" НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»"
+          >
+            НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»
           </h2>
-          <ul class="space-y-3 text-[24px] leading-relaxed">
-            <li
-              data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Kel-Suu Lake</span> — a stunning lake nestled in a rocky canyon near the Chinese border"
-              data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Озеро Кёль-Суу</span> — фантастическое озеро в скальном каньоне на границе с Китаем">
-              <span class="text-[#1C1C1C] font-semibold">Озеро Кёль-Суу</span>
-              — фантастическое озеро в скальном каньоне на границе с Китаем
-            </li>
-            <li
-              data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Tash-Rabat</span> — an ancient caravanserai on the Silk Road (14th century)"
-              data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Таш-Рабат</span> — древний караван-сарай на Великом шелковом пути (XIV век)">
-              <span class="text-[#1C1C1C] font-semibold">Таш-Рабат</span> —
-              древний караван-сарай на Великом шелковом пути (XIV век)
-            </li>
-            <li
-              data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Kol-Ukok Lake</span> — an alpine lake surrounded by flowering meadows"
-              data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Озеро Кол-Укок</span> — альпийское озеро среди цветущих лугов">
-              <span class="text-[#1C1C1C] font-semibold">Озеро Кол-Укок</span>
-              — альпийское озеро среди цветущих лугов
-            </li>
-            <li
-              data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Shirkat Waterfall or Naryn Gorge</span> — scenic mountain cascades"
-              data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Водопад Ширкат или Нарынское ущелье</span> — красивые горные каскады">
-              <span class="text-[#1C1C1C] font-semibold">Водопад Ширкат или Нарынское ущелье</span>
-              — красивые горные каскады
-            </li>
-          </ul>
-        </div>
+          <div class="flex flex-col md:flex-row gap-10 mt-[80px]">
+            <div class="w-full md:w-1/2">
+              <div
+                class="swiper mainSwiper rounded-xl overflow-hidden w-full max-w-[800px] h-[400px] 2xl:h-[520px]"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/naryn.png"
+                      alt="Tour Image"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/naryn-1.png"
+                      alt="Tour Image"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/naryn-2.png"
+                      alt="Tour Image"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/naryn-3.png"
+                      alt="Tour Image"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
 
-      </section>
-      <section class="mt-[80px] pb-[40px] md:pb-[80px]">
-        <div>
-          <h2 class="text-2xl text-[#235852] font-bold mb-10" data-lang-en="Program:" data-lang-ru="Программа:">
-            Программа:
-          </h2>
-          <ul class="space-y-10 text-[24px] leading-relaxed">
-            <li
-              data-lang-en="<div class='text-[#616161]'>Day 1</div><span class='text-[#1C1C1C] font-semibold'>Bishkek</span> → <span class='text-[#1C1C1C] font-semibold'>Naryn</span>, stops at mountain passes, overnight in a guesthouse"
-              data-lang-ru="<div class='text-[#616161]'>День 1</div><span class='text-[#1C1C1C] font-semibold'>Бишкек</span> → <span class='text-[#1C1C1C] font-semibold'>Нарын</span>, остановки на перевалах, ночёвка в гостевом доме">
-              <div class="text-[#616161]">День 1</div>
-              <span class="text-[#1C1C1C] font-semibold">Бишкек</span> →
-              <span class="text-[#1C1C1C] font-semibold">Нарын</span>, остановки на
-              перевалах, ночёвка в гостевом доме
-            </li>
+              <div class="swiper thumbSwiper mt-4 max-w-[800px]">
+                <div class="swiper-wrapper">
+                  <div
+                    class="swiper-slide !w-[175px] !h-[125px] cursor-pointer"
+                  >
+                    <img
+                      src="./assets/naryn.png"
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide !w-[175px] !h-[125px] cursor-pointer"
+                  >
+                    <img
+                      src="./assets/naryn-1.png"
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide !w-[175px] !h-[125px] cursor-pointer"
+                  >
+                    <img
+                      src="./assets/naryn-2.png"
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide !w-[175px] !h-[125px] cursor-pointer"
+                  >
+                    <img
+                      src="./assets/naryn-3.png"
+                      class="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <li
-              data-lang-en="<div class='text-[#616161]'>Day 2</div>Horseback ascent to Kol-Ukok Lake, overnight in a yurt by the lake"
-              data-lang-ru="<div class='text-[#616161]'>День 2</div>Конный подъём к озеру Кол-Укок, ночёвка в юрте у озера">
-              <div class="text-[#616161]">День 2</div>
-              Конный подъём к озеру Кол-Укок, ночёвка в юрте у озера
-            </li>
-
-            <li data-lang-en="<div class='text-[#616161]'>Day 3</div>Return and transfer to <strong>At-Bashy</strong>"
-              data-lang-ru="<div class='text-[#616161]'>День 3</div>Возвращение, трансфер в <strong>Ат-Башы</strong>">
-              <div class="text-[#616161]">День 3</div>
-              Возвращение, трансфер в <strong>Ат-Башы</strong>
-            </li>
-
-            <li
-              data-lang-en="<div class='text-[#616161]'>Day 4</div>Transfer to <strong>Tash-Rabat</strong>, excursion, overnight in yurts"
-              data-lang-ru="<div class='text-[#616161]'>День 4</div>Переезд в <strong>Таш-Рабат</strong>, экскурсия, ночь в юртах">
-              <div class="text-[#616161]">День 4</div>
-              Переезд в <strong>Таш-Рабат</strong>, экскурсия, ночь в юртах
-            </li>
-
-            <li
-              data-lang-en="<div class='text-[#616161]'>Day 5</div>Transfer to <strong>Kel-Suu</strong> (off-road vehicles)"
-              data-lang-ru="<div class='text-[#616161]'>День 5</div>Переезд к <strong>Кёль-Суу</strong> (внедорожники)">
-              <div class="text-[#616161]">День 5</div>
-              Переезд к <strong>Кёль-Суу</strong> (внедорожники)
-            </li>
-
-            <li data-lang-en="<div class='text-[#616161]'>Day 6</div>Hiking to the lake, photo session, picnic"
-              data-lang-ru="<div class='text-[#616161]'>День 6</div>Пешая прогулка к озеру, фотосессия, пикник">
-              <div class="text-[#616161]">День 6</div>
-              Пешая прогулка к озеру, фотосессия, пикник
-            </li>
-
-            <li
-              data-lang-en="<div class='text-[#616161]'>Day 7</div>Return to <strong>Naryn</strong> → <strong>Bishkek</strong>"
-              data-lang-ru="<div class='text-[#616161]'>День 7</div>Возвращение в <strong>Нарын</strong> → <strong>Бишкек</strong>">
-              <div class="text-[#616161]">День 7</div>
-              Возвращение в <strong>Нарын</strong> → <strong>Бишкек</strong>
-            </li>
-          </ul>
-        </div>
-
-      </section>
-    </main>
-  </div>
-  <footer class="py-8 bg-[#235852] text-[#fff]">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col lg:flex-row justify-between gap-12">
-        <div class="flex-1 text-secondary">
-          <h2 class="text-2xl font-semibold mb-4 text-primary" data-lang-en="Contact Information"
-            data-lang-ru="Контактная информация">
-            Contact Information
-          </h2>
-          <p class="mb-5">
-            <strong data-lang-en="Address:" data-lang-ru="Адрес:">Address:</strong>
-            <span data-lang-en="15 Baba-Ata Street, Bishkek" data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15">15 Baba-Ata
-              Street, Bishkek</span>
-          </p>
-          <div class="mb-5 flex gap-1">
-            <strong data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
-            <div class="flex flex-col gap-2">
-              <a href="tel:+996700334499" class="hover:underline block">
-                +996 700 334 499
+            <div
+              class="w-full h-fit md:w-1/2 flex flex-col justify-start gap-4 bg-[#F3F3F3] p-[22px] md:p-[32px] rounded-[24px] border-[1px] border-[#D9D9D9]"
+            >
+              <div
+                class="font-medium text-[24px] leading-[110%] text-[#616161]"
+                data-lang-ru="Дней"
+                data-lang-en="Days"
+              >
+                Дней
+              </div>
+              <div class="flex items-center gap-4 font-medium text-[24px]">
+                <img src="./assets/sun.svg" alt="sun" />
+                <span data-lang-ru="7 дней" data-lang-en="7 days"> 7 дней</span>
+                <img src="./assets/moon.svg" alt="sun" />
+                <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                  6 ночей</span
+                >
+              </div>
+              <div
+                class="font-medium text-[24px] leading-[110%] text-[#616161]"
+                data-lang-ru="Уровень"
+                data-lang-en="Level"
+              >
+                Уровень
+              </div>
+              <div
+                class="font-medium text-[24px]"
+                data-lang-ru="Легкий - Средний"
+                data-lang-en="Easy – Moderate"
+              >
+                Легкий - Средний
+              </div>
+              <div
+                class="font-medium text-[24px] leading-[110%] text-[#616161]"
+                data-lang-ru="Стоимость:"
+                data-lang-en="Price:"
+              >
+                Стоимость:
+              </div>
+              <div class="font-medium text-[24px]">
+                1 200 USD (~105 600 KGS)
+              </div>
+              <a
+                data-lang-ru="Связаться с нами"
+                data-lang-en="Contact"
+                href="https://wa.me/996700334499"
+                class="mt-6 px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              >
+              Связаться с нами
               </a>
-              <a href="tel:+996555644091" class="hover:underline block">
-                +996 555 644 091
+            </div>
+          </div>
+        </section>
+        <section class="mt-[80px] md:mt-[120px]">
+          <div>
+            <h2
+              class="text-[32px] text-[#235852] font-bold mb-10"
+              data-lang-en="Key Locations:"
+              data-lang-ru="Ключевые локации:"
+            >
+              Ключевые локации:
+            </h2>
+            <ul class="space-y-3 text-[24px] leading-relaxed">
+              <li
+                data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Kel-Suu Lake</span> — a stunning lake nestled in a rocky canyon near the Chinese border"
+                data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Озеро Кёль-Суу</span> — фантастическое озеро в скальном каньоне на границе с Китаем"
+              >
+                <span class="text-[#1C1C1C] font-semibold">Озеро Кёль-Суу</span>
+                — фантастическое озеро в скальном каньоне на границе с Китаем
+              </li>
+              <li
+                data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Tash-Rabat</span> — an ancient caravanserai on the Silk Road (14th century)"
+                data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Таш-Рабат</span> — древний караван-сарай на Великом шелковом пути (XIV век)"
+              >
+                <span class="text-[#1C1C1C] font-semibold">Таш-Рабат</span> —
+                древний караван-сарай на Великом шелковом пути (XIV век)
+              </li>
+              <li
+                data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Kol-Ukok Lake</span> — an alpine lake surrounded by flowering meadows"
+                data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Озеро Кол-Укок</span> — альпийское озеро среди цветущих лугов"
+              >
+                <span class="text-[#1C1C1C] font-semibold">Озеро Кол-Укок</span>
+                — альпийское озеро среди цветущих лугов
+              </li>
+              <li
+                data-lang-en=" <span class='text-[#1C1C1C] font-semibold'>Shirkat Waterfall or Naryn Gorge</span> — scenic mountain cascades"
+                data-lang-ru=" <span class='text-[#1C1C1C] font-semibold'>Водопад Ширкат или Нарынское ущелье</span> — красивые горные каскады"
+              >
+                <span class="text-[#1C1C1C] font-semibold"
+                  >Водопад Ширкат или Нарынское ущелье</span
+                >
+                — красивые горные каскады
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="mt-[80px] pb-[40px] md:pb-[80px]">
+          <div>
+            <h2
+              class="text-2xl text-[#235852] font-bold mb-10"
+              data-lang-en="Program:"
+              data-lang-ru="Программа:"
+            >
+              Программа:
+            </h2>
+            <ul class="space-y-10 text-[24px] leading-relaxed">
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 1</div><span class='text-[#1C1C1C] font-semibold'>Bishkek</span> → <span class='text-[#1C1C1C] font-semibold'>Naryn</span>, stops at mountain passes, overnight in a guesthouse"
+                data-lang-ru="<div class='text-[#616161]'>День 1</div><span class='text-[#1C1C1C] font-semibold'>Бишкек</span> → <span class='text-[#1C1C1C] font-semibold'>Нарын</span>, остановки на перевалах, ночёвка в гостевом доме"
+              >
+                <div class="text-[#616161]">День 1</div>
+                <span class="text-[#1C1C1C] font-semibold">Бишкек</span> →
+                <span class="text-[#1C1C1C] font-semibold">Нарын</span>,
+                остановки на перевалах, ночёвка в гостевом доме
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 2</div>Horseback ascent to Kol-Ukok Lake, overnight in a yurt by the lake"
+                data-lang-ru="<div class='text-[#616161]'>День 2</div>Конный подъём к озеру Кол-Укок, ночёвка в юрте у озера"
+              >
+                <div class="text-[#616161]">День 2</div>
+                Конный подъём к озеру Кол-Укок, ночёвка в юрте у озера
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 3</div>Return and transfer to <strong>At-Bashy</strong>"
+                data-lang-ru="<div class='text-[#616161]'>День 3</div>Возвращение, трансфер в <strong>Ат-Башы</strong>"
+              >
+                <div class="text-[#616161]">День 3</div>
+                Возвращение, трансфер в <strong>Ат-Башы</strong>
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 4</div>Transfer to <strong>Tash-Rabat</strong>, excursion, overnight in yurts"
+                data-lang-ru="<div class='text-[#616161]'>День 4</div>Переезд в <strong>Таш-Рабат</strong>, экскурсия, ночь в юртах"
+              >
+                <div class="text-[#616161]">День 4</div>
+                Переезд в <strong>Таш-Рабат</strong>, экскурсия, ночь в юртах
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 5</div>Transfer to <strong>Kel-Suu</strong> (off-road vehicles)"
+                data-lang-ru="<div class='text-[#616161]'>День 5</div>Переезд к <strong>Кёль-Суу</strong> (внедорожники)"
+              >
+                <div class="text-[#616161]">День 5</div>
+                Переезд к <strong>Кёль-Суу</strong> (внедорожники)
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 6</div>Hiking to the lake, photo session, picnic"
+                data-lang-ru="<div class='text-[#616161]'>День 6</div>Пешая прогулка к озеру, фотосессия, пикник"
+              >
+                <div class="text-[#616161]">День 6</div>
+                Пешая прогулка к озеру, фотосессия, пикник
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 7</div>Return to <strong>Naryn</strong> → <strong>Bishkek</strong>"
+                data-lang-ru="<div class='text-[#616161]'>День 7</div>Возвращение в <strong>Нарын</strong> → <strong>Бишкек</strong>"
+              >
+                <div class="text-[#616161]">День 7</div>
+                Возвращение в <strong>Нарын</strong> → <strong>Бишкек</strong>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="py-8 bg-[#235852] text-[#fff]">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row justify-between gap-12">
+          <div class="flex-1 text-secondary">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary"
+              data-lang-en="Contact Information"
+              data-lang-ru="Контактная информация"
+            >
+              Contact Information
+            </h2>
+            <p class="mb-5">
+              <strong data-lang-en="Address:" data-lang-ru="Адрес:"
+                >Address:</strong
+              >
+              <span
+                data-lang-en="15 Baba-Ata Street, Bishkek"
+                data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15"
+                >15 Baba-Ata Street, Bishkek</span
+              >
+            </p>
+            <div class="mb-5 flex gap-1">
+              <strong data-lang-en="Phone:" data-lang-ru="Телефон:"
+                >Phone:</strong
+              >
+              <div class="flex flex-col gap-2">
+                <a href="tel:+996700334499" class="hover:underline block">
+                  +996 700 334 499
+                </a>
+                <a href="tel:+996555644091" class="hover:underline block">
+                  +996 555 644 091
+                </a>
+              </div>
+            </div>
+            <div class="mb-5 flex gap-1">
+              <strong>Email:</strong>
+              <a href="mailto:contact@infinance.kg" class="hover:underline">
+                maxkgtours@gmail.com
               </a>
             </div>
           </div>
-          <div class="mb-5 flex gap-1">
-            <strong>Email:</strong>
-            <a href="mailto:contact@infinance.kg" class="hover:underline">
-              maxkgtours@gmail.com
-            </a>
+
+          <div class="flex-1 text-secondary">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary"
+              data-lang-en="Navigation"
+              data-lang-ru="Навигация"
+            >
+              Navigation
+            </h2>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="./index.html"
+                  data-lang-en="Home"
+                  data-lang-ru="Главная"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#discover"
+                  data-lang-en="Our tours"
+                  data-lang-ru="Наши туры"
+                  >Our tours</a
+                >
+              </li>
+              <li>
+                <a href="#reviews" data-lang-en="Reviews" data-lang-ru="Отзывы"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  data-lang-en="Contact"
+                  data-lang-ru="Контакты"
+                  >Contact</a
+                >
+              </li>
+            </ul>
           </div>
-        </div>
 
-        <div class="flex-1 text-secondary">
-          <h2 class="text-2xl font-semibold mb-4 text-primary" data-lang-en="Navigation" data-lang-ru="Навигация">
-            Navigation
-          </h2>
-          <ul class="space-y-3">
-            <li>
-              <a href="./index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a>
-            </li>
-            <li>
-              <a href="#discover" data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
-            </li>
-            <li>
-              <a href="#reviews" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-            </li>
-            <li>
-              <a href="#contact" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex-1">
-          <h2 class="text-2xl font-semibold mb-4 text-primary" data-lang-en="Follow Us" data-lang-ru="Мы в соцсетях">
-            Follow Us
-          </h2>
-          <div class="flex space-x-4 justify-start">
-            <a href="https://www.instagram.com/kg_tours_/"
-              class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
-              aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <img class="w-full h-full" src="./assets/ins.svg" alt="LinkedIn" />
-            </a>
-            <a href="https://wa.me/996700334499"
-              class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
-              aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-              <img class="w-full h-full" src="./assets/whatsapp.svg" alt="Twitter" />
-            </a>
-            <a href="https://www.facebook.com/max.baike"
-              class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
-              aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-              <img class="w-full h-full" src="./assets/facebook.svg" alt="Facebook" />
-            </a>
+          <div class="flex-1">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary"
+              data-lang-en="Follow Us"
+              data-lang-ru="Мы в соцсетях"
+            >
+              Follow Us
+            </h2>
+            <div class="flex space-x-4 justify-start">
+              <a
+                href="https://www.instagram.com/kg_tours_/"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/ins.svg"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                href="https://wa.me/996700334499"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/whatsapp.svg"
+                  alt="Twitter"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/max.baike"
+                class="flex items-center justify-center w-[40px] h-[40px] bg-primary rounded-full transition-transform hover:scale-105"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  AOS.init();
-  document.querySelectorAll(".toggle-extra").forEach((button) => {
-    button.addEventListener("click", () => {
-      const container = button.closest(".discover-item");
-      const extra = container.querySelector(".extra-text");
-      const text = button.querySelector(".lang-text");
-      const arrow = button.querySelector("img");
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+    document.querySelectorAll(".toggle-extra").forEach((button) => {
+      button.addEventListener("click", () => {
+        const container = button.closest(".discover-item");
+        const extra = container.querySelector(".extra-text");
+        const text = button.querySelector(".lang-text");
+        const arrow = button.querySelector("img");
 
-      const isOpen = extra.classList.contains("max-h-0");
+        const isOpen = extra.classList.contains("max-h-0");
 
-      extra.classList.toggle("max-h-0");
-      extra.classList.toggle("max-h-[200px]");
-      arrow.classList.toggle("rotate-180");
+        extra.classList.toggle("max-h-0");
+        extra.classList.toggle("max-h-[200px]");
+        arrow.classList.toggle("rotate-180");
 
-      if (isOpen) {
-        text.textContent =
-          text.dataset.langRu === "Подробнее" ? "Скрыть" : "Hide";
-      } else {
-        text.textContent = text.dataset.langRu;
-      }
-    });
-  });
-  function setLanguage(lang) {
-    localStorage.setItem("language", lang);
-
-    document
-      .querySelectorAll("[data-lang-en], [data-lang-ru]")
-      .forEach((element) => {
-        if (element.hasAttribute(`data-lang-${lang}`)) {
-          if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-            element.placeholder = element.getAttribute(`data-lang-${lang}`);
-          } else {
-            const content = element.getAttribute(`data-lang-${lang}`);
-            if (content.includes("<") && content.includes(">")) {
-              element.innerHTML = content;
-            } else {
-              element.textContent = content;
-            }
-          }
+        if (isOpen) {
+          text.textContent =
+            text.dataset.langRu === "Подробнее" ? "Скрыть" : "Hide";
+        } else {
+          text.textContent = text.dataset.langRu;
         }
       });
+    });
+    function setLanguage(lang) {
+      localStorage.setItem("language", lang);
 
-    document.documentElement.lang = lang;
-  }
+      document
+        .querySelectorAll("[data-lang-en], [data-lang-ru]")
+        .forEach((element) => {
+          if (element.hasAttribute(`data-lang-${lang}`)) {
+            if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+              element.placeholder = element.getAttribute(`data-lang-${lang}`);
+            } else {
+              const content = element.getAttribute(`data-lang-${lang}`);
+              if (content.includes("<") && content.includes(">")) {
+                element.innerHTML = content;
+              } else {
+                element.textContent = content;
+              }
+            }
+          }
+        });
 
-  const savedLang = localStorage.getItem("language") || "en";
-  setLanguage(savedLang);
-  const burger = document.getElementById("burger");
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-  const closeSidebar = document.getElementById("closeSidebar");
-
-  const openMenu = () => {
-    sidebar.classList.remove("-translate-x-full");
-    overlay.classList.remove("hidden");
-    document.body.classList.add("overflow-hidden");
-    header.classList.add('h-screen')
-  };
-
-  const closeMenu = () => {
-    sidebar.classList.add("-translate-x-full");
-    overlay.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
-    header.classList.remove('h-screen')
-  };
-
-  burger.addEventListener("click", openMenu);
-  closeSidebar.addEventListener("click", closeMenu);
-  overlay.addEventListener("click", closeMenu);
-
-  let lastScrollY = window.scrollY;
-  const header = document.getElementById('stickyHeader');
-
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY && currentScrollY > 150) {
-      header.classList.remove('-translate-y-full');
-    } else {
-      header.classList.add('-translate-y-full');
+      document.documentElement.lang = lang;
     }
 
-    lastScrollY = currentScrollY;
-  });
-  const sidebarLinks = sidebar.querySelectorAll("a");
-  const sidebarButton = sidebar.querySelectorAll("button");
-  sidebarLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-  sidebarButton.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-  const thumbSwiper = new Swiper(".thumbSwiper", {
-    spaceBetween: 10,
-    slidesPerView: "auto",
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
+    const savedLang = localStorage.getItem("language") || "en";
+    setLanguage(savedLang);
+    const burger = document.getElementById("burger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const closeSidebar = document.getElementById("closeSidebar");
 
-  const mainSwiper = new Swiper(".mainSwiper", {
-    spaceBetween: 10,
-    navigation: true,
-    thumbs: {
-      swiper: thumbSwiper,
-    },
-  });
-</script>
+    const openMenu = () => {
+      sidebar.classList.remove("-translate-x-full");
+      overlay.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      header.classList.add("h-screen");
+    };
 
+    const closeMenu = () => {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      header.classList.remove("h-screen");
+    };
+
+    burger.addEventListener("click", openMenu);
+    closeSidebar.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById("stickyHeader");
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        header.classList.remove("-translate-y-full");
+      } else {
+        header.classList.add("-translate-y-full");
+      }
+
+      lastScrollY = currentScrollY;
+    });
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    const sidebarButton = sidebar.querySelectorAll("button");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+    sidebarButton.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+    const thumbSwiper = new Swiper(".thumbSwiper", {
+      spaceBetween: 10,
+      slidesPerView: "auto",
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    const mainSwiper = new Swiper(".mainSwiper", {
+      spaceBetween: 10,
+      navigation: true,
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+    });
+  </script>
 </html>

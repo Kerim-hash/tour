@@ -35,82 +35,171 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 
   <body class="overflow-x-hidden scroll-smooth">
     <div class="wrapper">
-      <header id="stickyHeader"
-      class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full">
-     <div class="flex items-center gap-10">
-  
-       <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
-       <nav class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]">
-         <a href="./index.html" class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Home" data-lang-ru="Главная">Home</a>
-         <a href="./index.html#discover" class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
-         <a href="./index.html#reviews" class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-         <a href="./index.html#contact" class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-        </nav>
-      </div>
-    
-      <div class="hidden xl:flex items-center gap-4">
-        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
-          <button onclick="setLanguage('en')" id="btn-en"
-            class="cursor-pointer text-black">
-            EN
-          </button>
-          <span class="text-black/40 select-none">|</span>
-          <button onclick="setLanguage('ru')" id="btn-ru"
-            class="cursor-pointer text-black">
-            RU
-          </button>
+      <header
+        id="stickyHeader"
+        class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full"
+      >
+        <div class="flex items-center gap-10">
+          <img
+            src="./assets/logo.svg"
+            alt="logo"
+            class="w-[80px] h-[40px] rounded-[24px] object-contain"
+          />
+          <nav
+            class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]"
+          >
+            <a
+              href="./index.html"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Home"
+              data-lang-ru="Главная"
+              >Home</a
+            >
+            <a
+              href="./index.html#discover"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Our tours"
+              data-lang-ru="Наши туры"
+              >Our tours</a
+            >
+            <a
+              href="./index.html#reviews"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Reviews"
+              data-lang-ru="Отзывы"
+              >Reviews</a
+            >
+            <a
+              href="./index.html#contact"
+              class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+              data-lang-en="Contact"
+              data-lang-ru="Контакты"
+              >Contact</a
+            >
+          </nav>
         </div>
-        <a href="tel:+996700334499" class="hover:underline">
-          +996 700 334 499
-        </a>
-          <a
-          data-lang-ru="Связаться"
-          data-lang-en="Contact"
-          href="https://wa.me/996700334499"
-          class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
-        >
-          Связаться
-        </a>
-      </div>
-    
-      <!-- Burger -->
-      <button id="burger" class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
-        aria-label="Toggle menu">
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-        <span class="block w-6 h-[2px] bg-black"></span>
-      </button>
-    
-      <!-- Mobile sidebar -->
-      <div id="sidebar"
-        class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden">
-        <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
-          &times;
-        </button>
-        <nav>
-          <ul class="flex flex-col gap-6 mt-12 text-lg">
-            <li><a href="./index.html" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
-            <li><a href="./index.html#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a></li>
-            <li><a href="./index.html#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a></li>
-            <li><a href="./index.html#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a></li>
-          </ul>
-          <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
-            <button onclick="setLanguage('en')" id="btn-en"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+
+        <div class="hidden xl:flex items-center gap-4">
+          <div
+            class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm"
+          >
+            <button
+              onclick="setLanguage('en')"
+              id="btn-en"
+              class="cursor-pointer text-black"
+            >
               EN
             </button>
-            <span class="text-white/40 select-none">|</span>
-            <button onclick="setLanguage('ru')" id="btn-ru"
-              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+            <span class="text-black/40 select-none">|</span>
+            <button
+              onclick="setLanguage('ru')"
+              id="btn-ru"
+              class="cursor-pointer text-black"
+            >
               RU
             </button>
           </div>
-        </nav>
-      </div>
-    
-      <!-- Overlay -->
-      <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"></div>
-    </header>
+          <a href="tel:+996700334499" class="hover:underline">
+            +996 700 334 499
+          </a>
+          <a
+            data-lang-ru="Связаться с нами"
+            data-lang-en="Contact"
+            href="https://wa.me/996700334499"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+          >
+          Связаться с нами
+          </a>
+        </div>
+
+        <!-- Burger -->
+        <button
+          id="burger"
+          class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
+          aria-label="Toggle menu"
+        >
+          <span class="block w-6 h-[2px] bg-black"></span>
+          <span class="block w-6 h-[2px] bg-black"></span>
+          <span class="block w-6 h-[2px] bg-black"></span>
+        </button>
+
+        <!-- Mobile sidebar -->
+        <div
+          id="sidebar"
+          class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden"
+        >
+          <button
+            id="closeSidebar"
+            class="absolute top-6 right-6 text-2xl"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
+          <nav>
+            <ul class="flex flex-col gap-6 mt-12 text-lg">
+              <li>
+                <a
+                  href="./index.html"
+                  class="hover:underline"
+                  data-lang-en="Home"
+                  data-lang-ru="Главная"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#discover"
+                  class="hover:underline"
+                  data-lang-en="Our tours"
+                  data-lang-ru="Наши туры"
+                  >Our tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#reviews"
+                  class="hover:underline"
+                  data-lang-en="Reviews"
+                  data-lang-ru="Отзывы"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./index.html#contact"
+                  class="hover:underline"
+                  data-lang-en="Contact"
+                  data-lang-ru="Контакты"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+            <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
+              <button
+                onclick="setLanguage('en')"
+                id="btn-en"
+                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+              >
+                EN
+              </button>
+              <span class="text-white/40 select-none">|</span>
+              <button
+                onclick="setLanguage('ru')"
+                id="btn-ru"
+                class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all"
+              >
+                RU
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Overlay -->
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"
+        ></div>
+      </header>
       <section class="hero relative rounded-[40px] overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
         <header
@@ -370,16 +459,14 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               >
                 Стоимость:
               </div>
-              <div class="font-medium text-[24px]">
-                930 USD (~81 600 KGS)
-              </div>
+              <div class="font-medium text-[24px]">930 USD (~81 600 KGS)</div>
               <a
-                data-lang-ru="Связаться"
+                data-lang-ru="Связаться с нами"
                 data-lang-en="Contact"
                 href="https://wa.me/996700334499"
                 class="mt-6 px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
               >
-                Связаться
+              Связаться с нами
               </a>
             </div>
           </div>
@@ -394,38 +481,50 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               Ключевые локации:
             </h2>
             <ul class="space-y-3 text-[24px] leading-relaxed">
-                <li
-                  data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Ala-Archa National Park</span> — a one-day scenic trekking destination near Bishkek"
-                  data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Национальный парк «Ала-Арча»</span> — однодневный трек по живописной местности недалеко от Бишкека"
+              <li
+                data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Ala-Archa National Park</span> — a one-day scenic trekking destination near Bishkek"
+                data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Национальный парк «Ала-Арча»</span> — однодневный трек по живописной местности недалеко от Бишкека"
+              >
+                <span class="text-[#1C1C1C] font-semibold"
+                  >Национальный парк «Ала-Арча»</span
                 >
-                  <span class="text-[#1C1C1C] font-semibold">Национальный парк «Ала-Арча»</span> — однодневный трек по живописной местности недалеко от Бишкека
-                </li>
-                <li
-                  data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Kegeti Waterfall</span> — a picturesque 30-meter waterfall in a coniferous gorge"
-                  data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Водопад Кегети</span> — живописный 30-метровый водопад в хвойном ущелье"
+                — однодневный трек по живописной местности недалеко от Бишкека
+              </li>
+              <li
+                data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Kegeti Waterfall</span> — a picturesque 30-meter waterfall in a coniferous gorge"
+                data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Водопад Кегети</span> — живописный 30-метровый водопад в хвойном ущелье"
+              >
+                <span class="text-[#1C1C1C] font-semibold">Водопад Кегети</span>
+                — живописный 30-метровый водопад в хвойном ущелье
+              </li>
+              <li
+                data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Belogorka Waterfall</span> — one of the tallest in Kyrgyzstan (~60 m)"
+                data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Водопад Белогорка</span> — один из самых высоких в Кыргызстане (~60 м)"
+              >
+                <span class="text-[#1C1C1C] font-semibold"
+                  >Водопад Белогорка</span
                 >
-                  <span class="text-[#1C1C1C] font-semibold">Водопад Кегети</span> — живописный 30-метровый водопад в хвойном ущелье
-                </li>
-                <li
-                  data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Belogorka Waterfall</span> — one of the tallest in Kyrgyzstan (~60 m)"
-                  data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Водопад Белогорка</span> — один из самых высоких в Кыргызстане (~60 м)"
+                — один из самых высоких в Кыргызстане (~60 м)
+              </li>
+              <li
+                data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Chon-Kemin Valley</span> — river walks and horseback riding in scenic nature"
+                data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Чон-Кеминская долина</span> — прогулки вдоль реки и на лошадях"
+              >
+                <span class="text-[#1C1C1C] font-semibold"
+                  >Чон-Кеминская долина</span
                 >
-                  <span class="text-[#1C1C1C] font-semibold">Водопад Белогорка</span> — один из самых высоких в Кыргызстане (~60 м)
-                </li>
-                <li
-                  data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Chon-Kemin Valley</span> — river walks and horseback riding in scenic nature"
-                  data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Чон-Кеминская долина</span> — прогулки вдоль реки и на лошадях"
+                — прогулки вдоль реки и на лошадях
+              </li>
+              <li
+                data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Kyrgyz Village</span> — traditional workshops and national cuisine"
+                data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Кыргызская деревня</span> — мастер-классы и национальная кухня"
+              >
+                <span class="text-[#1C1C1C] font-semibold"
+                  >Кыргызская деревня</span
                 >
-                  <span class="text-[#1C1C1C] font-semibold">Чон-Кеминская долина</span> — прогулки вдоль реки и на лошадях
-                </li>
-                <li
-                  data-lang-en="<span class='text-[#1C1C1C] font-semibold'>Kyrgyz Village</span> — traditional workshops and national cuisine"
-                  data-lang-ru="<span class='text-[#1C1C1C] font-semibold'>Кыргызская деревня</span> — мастер-классы и национальная кухня"
-                >
-                  <span class="text-[#1C1C1C] font-semibold">Кыргызская деревня</span> — мастер-классы и национальная кухня
-                </li>
-              </ul>
-              
+                — мастер-классы и национальная кухня
+              </li>
+            </ul>
           </div>
         </section>
         <section class="mt-[80px] pb-[40px] md:pb-[80px]">
@@ -438,62 +537,71 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               Программа:
             </h2>
             <ul class="space-y-10 text-[24px] leading-relaxed">
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 1</div>Arrival in <span class='text-[#1C1C1C] font-semibold'>Bishkek</span>, city tour, dinner"
-                  data-lang-ru="<div class='text-[#616161]'>День 1</div>Прибытие в <span class='text-[#1C1C1C] font-semibold'>Бишкек</span>, обзорная экскурсия, ужин"
-                >
-                  <div class="text-[#616161]">День 1</div>
-                  Прибытие в <span class="text-[#1C1C1C] font-semibold">Бишкек</span>, обзорная экскурсия, ужин
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 2</div><span class='text-[#1C1C1C] font-semibold'>Kegeti Waterfall</span>, easy trek, picnic, return"
-                  data-lang-ru="<div class='text-[#616161]'>День 2</div>Водопад <span class='text-[#1C1C1C] font-semibold'>Кегети</span>, лёгкий трек, пикник, возвращение"
-                >
-                  <div class="text-[#616161]">День 2</div>
-                  Водопад <span class="text-[#1C1C1C] font-semibold">Кегети</span>, лёгкий трек, пикник, возвращение
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 3</div><span class='text-[#1C1C1C] font-semibold'>Belogorka</span>: trekking through pine forests to the waterfall"
-                  data-lang-ru="<div class='text-[#616161]'>День 3</div><span class='text-[#1C1C1C] font-semibold'>Белогорка</span>: треккинг через сосновые леса к водопаду"
-                >
-                  <div class="text-[#616161]">День 3</div>
-                  <span class="text-[#1C1C1C] font-semibold">Белогорка</span>: треккинг через сосновые леса к водопаду
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 4</div>Transfer to <span class='text-[#1C1C1C] font-semibold'>Chon-Kemin</span>, stay at an ethnic guesthouse"
-                  data-lang-ru="<div class='text-[#616161]'>День 4</div>Переезд в <span class='text-[#1C1C1C] font-semibold'>Чон-Кемин</span>, размещение в этно-гостевом доме"
-                >
-                  <div class="text-[#616161]">День 4</div>
-                  Переезд в <span class="text-[#1C1C1C] font-semibold">Чон-Кемин</span>, размещение в этно-гостевом доме
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 5</div>Horseback rides, evening by the campfire with Kyrgyz songs"
-                  data-lang-ru="<div class='text-[#616161]'>День 5</div>Конные прогулки, вечер у костра с кыргызскими песнями"
-                >
-                  <div class="text-[#616161]">День 5</div>
-                  Конные прогулки, вечер у костра с кыргызскими песнями
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 6</div>Return to <span class='text-[#1C1C1C] font-semibold'>Bishkek</span>, museum visit and souvenir market"
-                  data-lang-ru="<div class='text-[#616161]'>День 6</div>Возвращение в <span class='text-[#1C1C1C] font-semibold'>Бишкек</span>, музей и сувенирный рынок"
-                >
-                  <div class="text-[#616161]">День 6</div>
-                  Возвращение в <span class="text-[#1C1C1C] font-semibold">Бишкек</span>, музей и сувенирный рынок
-                </li>
-              
-                <li
-                  data-lang-en="<div class='text-[#616161]'>Day 7</div>Departure, transfer to airport"
-                  data-lang-ru="<div class='text-[#616161]'>День 7</div>Отъезд, трансфер в аэропорт"
-                >
-                  <div class="text-[#616161]">День 7</div>
-                  Отъезд, трансфер в аэропорт
-                </li>
-              </ul>
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 1</div>Arrival in <span class='text-[#1C1C1C] font-semibold'>Bishkek</span>, city tour, dinner"
+                data-lang-ru="<div class='text-[#616161]'>День 1</div>Прибытие в <span class='text-[#1C1C1C] font-semibold'>Бишкек</span>, обзорная экскурсия, ужин"
+              >
+                <div class="text-[#616161]">День 1</div>
+                Прибытие в
+                <span class="text-[#1C1C1C] font-semibold">Бишкек</span>,
+                обзорная экскурсия, ужин
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 2</div><span class='text-[#1C1C1C] font-semibold'>Kegeti Waterfall</span>, easy trek, picnic, return"
+                data-lang-ru="<div class='text-[#616161]'>День 2</div>Водопад <span class='text-[#1C1C1C] font-semibold'>Кегети</span>, лёгкий трек, пикник, возвращение"
+              >
+                <div class="text-[#616161]">День 2</div>
+                Водопад
+                <span class="text-[#1C1C1C] font-semibold">Кегети</span>, лёгкий
+                трек, пикник, возвращение
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 3</div><span class='text-[#1C1C1C] font-semibold'>Belogorka</span>: trekking through pine forests to the waterfall"
+                data-lang-ru="<div class='text-[#616161]'>День 3</div><span class='text-[#1C1C1C] font-semibold'>Белогорка</span>: треккинг через сосновые леса к водопаду"
+              >
+                <div class="text-[#616161]">День 3</div>
+                <span class="text-[#1C1C1C] font-semibold">Белогорка</span>:
+                треккинг через сосновые леса к водопаду
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 4</div>Transfer to <span class='text-[#1C1C1C] font-semibold'>Chon-Kemin</span>, stay at an ethnic guesthouse"
+                data-lang-ru="<div class='text-[#616161]'>День 4</div>Переезд в <span class='text-[#1C1C1C] font-semibold'>Чон-Кемин</span>, размещение в этно-гостевом доме"
+              >
+                <div class="text-[#616161]">День 4</div>
+                Переезд в
+                <span class="text-[#1C1C1C] font-semibold">Чон-Кемин</span>,
+                размещение в этно-гостевом доме
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 5</div>Horseback rides, evening by the campfire with Kyrgyz songs"
+                data-lang-ru="<div class='text-[#616161]'>День 5</div>Конные прогулки, вечер у костра с кыргызскими песнями"
+              >
+                <div class="text-[#616161]">День 5</div>
+                Конные прогулки, вечер у костра с кыргызскими песнями
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 6</div>Return to <span class='text-[#1C1C1C] font-semibold'>Bishkek</span>, museum visit and souvenir market"
+                data-lang-ru="<div class='text-[#616161]'>День 6</div>Возвращение в <span class='text-[#1C1C1C] font-semibold'>Бишкек</span>, музей и сувенирный рынок"
+              >
+                <div class="text-[#616161]">День 6</div>
+                Возвращение в
+                <span class="text-[#1C1C1C] font-semibold">Бишкек</span>, музей
+                и сувенирный рынок
+              </li>
+
+              <li
+                data-lang-en="<div class='text-[#616161]'>Day 7</div>Departure, transfer to airport"
+                data-lang-ru="<div class='text-[#616161]'>День 7</div>Отъезд, трансфер в аэропорт"
+              >
+                <div class="text-[#616161]">День 7</div>
+                Отъезд, трансфер в аэропорт
+              </li>
+            </ul>
           </div>
         </section>
       </main>
@@ -502,17 +610,27 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
       <div class="container mx-auto px-6">
         <div class="flex flex-col lg:flex-row justify-between gap-12">
           <div class="flex-1 text-secondary">
-            <h2 class="text-2xl font-semibold mb-4 text-primary" data-lang-en="Contact Information"
-              data-lang-ru="Контактная информация">
+            <h2
+              class="text-2xl font-semibold mb-4 text-primary"
+              data-lang-en="Contact Information"
+              data-lang-ru="Контактная информация"
+            >
               Contact Information
             </h2>
             <p class="mb-5">
-              <strong data-lang-en="Address:" data-lang-ru="Адрес:">Address:</strong>
-              <span data-lang-en="15 Baba-Ata Street, Bishkek" data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15">15 Baba-Ata
-                Street, Bishkek</span>
+              <strong data-lang-en="Address:" data-lang-ru="Адрес:"
+                >Address:</strong
+              >
+              <span
+                data-lang-en="15 Baba-Ata Street, Bishkek"
+                data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15"
+                >15 Baba-Ata Street, Bishkek</span
+              >
             </p>
             <div class="mb-5 flex gap-1">
-              <strong data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
+              <strong data-lang-en="Phone:" data-lang-ru="Телефон:"
+                >Phone:</strong
+              >
               <div class="flex flex-col gap-2">
                 <a href="tel:+996700334499" class="hover:underline block">
                   +996 700 334 499
@@ -540,7 +658,12 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             </h2>
             <ul class="space-y-3">
               <li>
-                <a href="./index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a>
+                <a
+                  href="./index.html"
+                  data-lang-en="Home"
+                  data-lang-ru="Главная"
+                  >Home</a
+                >
               </li>
               <li>
                 <a
@@ -680,30 +803,30 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
       sidebar.classList.remove("-translate-x-full");
       overlay.classList.remove("hidden");
       document.body.classList.add("overflow-hidden");
-      header.classList.add('h-screen')
+      header.classList.add("h-screen");
     };
 
     const closeMenu = () => {
       sidebar.classList.add("-translate-x-full");
       overlay.classList.add("hidden");
       document.body.classList.remove("overflow-hidden");
-      header.classList.remove('h-screen')
+      header.classList.remove("h-screen");
     };
 
     let lastScrollY = window.scrollY;
-  const header = document.getElementById('stickyHeader');
+    const header = document.getElementById("stickyHeader");
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 150) {
-      header.classList.remove('-translate-y-full');
-    } else {
-      header.classList.add('-translate-y-full');
-    }
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        header.classList.remove("-translate-y-full");
+      } else {
+        header.classList.add("-translate-y-full");
+      }
 
-    lastScrollY = currentScrollY;
-  });
+      lastScrollY = currentScrollY;
+    });
     burger.addEventListener("click", openMenu);
     closeSidebar.addEventListener("click", closeMenu);
     overlay.addEventListener("click", closeMenu);
