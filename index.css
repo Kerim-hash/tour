@@ -6,7 +6,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 40px
+  scroll-padding-top: 40px;
 }
 
 .wrapper {
@@ -27,13 +27,18 @@ html {
   backdrop-filter: blur(40px);
 }
 .nav-link {
-  background: rgba(0, 0, 0, 1);
+  background: #ffffff66;
   padding: 8px 24px;
   border-radius: 40px;
   font-width: 600;
   font-size: 24px;
-  color: #fff;
+  color: rgba(10, 10, 10, 1);
   font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  background: #133632;
+  color: rgba(255, 255, 255, 1);
 }
 
 .btn-link {
@@ -42,7 +47,7 @@ html {
   padding-right: 32px;
   padding-bottom: 16px;
   padding-left: 32px;
-  background: rgba(42, 42, 42, 1);
+  background: rgba(35, 88, 82, 1);
   font-family: Open Sans;
   font-weight: 600;
   font-size: 24px;
@@ -51,12 +56,11 @@ html {
   text-align: center;
   transition: 0.3s;
   cursor: pointer;
-  color: #e5e7eb;
+  color: rgba(255, 255, 255, 1);
 }
 
 .btn-link:hover {
-  background-color: #e5e7eb;
-  color: rgba(42, 42, 42, 1);
+  background-color: rgba(19, 54, 50, 1);
 }
 /* discover */
 .discover-item {
@@ -169,7 +173,6 @@ html {
   line-height: 110.00000000000001%;
   letter-spacing: -2px;
   text-transform: uppercase;
-  color: rgba(83, 83, 83, 1);
   margin-bottom: 32px;
 }
 
@@ -195,7 +198,7 @@ html {
   line-height: 110.00000000000001%;
   letter-spacing: -2px;
   text-transform: uppercase;
-  color: rgba(83, 83, 83, 1);
+  color: #235852;
 }
 
 .testimonials-subtitle {
@@ -228,7 +231,7 @@ html {
   line-height: 110.00000000000001%;
   letter-spacing: -2px;
   text-transform: uppercase;
-  color: rgba(83, 83, 83, 1);
+  color: #235852;
 }
 
 @media (width <= 1536px) {
@@ -259,7 +262,7 @@ html {
   .wrapper {
     padding: 20px 16px;
   }
-  .hero{
+  .hero {
     height: calc(100vh - 110px);
   }
   .btn-link {
