@@ -28,82 +28,86 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 <body class="overflow-x-hidden scroll-smooth">
   <div class="wrapper">
     <header id="stickyHeader"
-    class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full">
-   <div class="flex items-center gap-10">
+      class="fixed top-0 left-0 w-full flex items-center justify-between px-4 lg:px-20 py-3 bg-white/40 backdrop-blur-[40px] z-50 transition-transform duration-500 ease-in-out -translate-y-full">
+      <div class="flex items-center gap-10">
 
-     <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
-     <nav class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]">
-       <a href="#" class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Home" data-lang-ru="Главная">Home</a>
-       <a href="#discover" class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
-       <a href="#reviews" class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
-       <a href="#contact" class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"  data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-      </nav>
-    </div>
-  
-    <div class="hidden xl:flex items-center gap-4">
-      <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
-        <button onclick="setLanguage('en')" id="btn-en"
-          class="cursor-pointer text-black">
-          EN
-        </button>
-        <span class="text-black/40 select-none">|</span>
-        <button onclick="setLanguage('ru')" id="btn-ru"
-          class="cursor-pointer text-black">
-          RU
-        </button>
+        <img src="./assets/logo.svg" alt="logo" class="w-[80px] h-[40px] rounded-[24px] object-contain" />
+        <nav class="hidden xl:flex items-center gap-8 text-sm font-medium text-[#1C1C1C]">
+          <a href="#"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+            data-lang-en="Home" data-lang-ru="Главная">Home</a>
+          <a href="#discover"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+            data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a>
+          <a href="#reviews"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+            data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a>
+          <a href="#contact"
+            class="px-6 py-2 bg-[#235852] hover:bg-[#133632]  text-center text-white rounded-[40px] cursor-pointer transition-all duration-300 ease-in-out"
+            data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
+        </nav>
       </div>
-      <a href="tel:+996700334499" class="hover:underline">
-        +996 700 334 499
-      </a>
-        <a
-         data-lang-ru="Связаться с нами"
-        data-lang-en="Contact"
-        href="https://wa.me/996700334499"
-        class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer  transition-all duration-300 ease-in-out"
-      >
-      Связаться с нами
-      </a>
-    </div>
-  
-    <!-- Burger -->
-    <button id="burger" class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
-      aria-label="Toggle menu">
-      <span class="block w-6 h-[2px] bg-black"></span>
-      <span class="block w-6 h-[2px] bg-black"></span>
-      <span class="block w-6 h-[2px] bg-black"></span>
-    </button>
-  
-    <!-- Mobile sidebar -->
-    <div id="sidebar"
-      class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden">
-      <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
-        &times;
-      </button>
-      <nav>
-        <ul class="flex flex-col gap-6 mt-12 text-lg">
-          <li><a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
-          <li><a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our tours</a></li>
-          <li><a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a></li>
-          <li><a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a></li>
-        </ul>
-        <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
-          <button onclick="setLanguage('en')" id="btn-en"
-            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+
+      <div class="hidden xl:flex items-center gap-4">
+        <div class="language-switcher ml-auto z-50 flex items-center gap-2 text-sm ">
+          <button onclick="setLanguage('en')" id="btn-en" class="cursor-pointer text-black">
             EN
           </button>
-          <span class="text-white/40 select-none">|</span>
-          <button onclick="setLanguage('ru')" id="btn-ru"
-            class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+          <span class="text-black/40 select-none">|</span>
+          <button onclick="setLanguage('ru')" id="btn-ru" class="cursor-pointer text-black">
             RU
           </button>
         </div>
-      </nav>
-    </div>
-  
-    <!-- Overlay -->
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"></div>
-  </header>
-  
+        <a href="tel:+996700334499" class="hover:underline">
+          +996 700 334 499
+        </a>
+        <a data-lang-ru="Связаться с нами" data-lang-en="Contact" href="https://wa.me/996700334499"
+          class="px-6 py-2 bg-[#235852] hover:bg-[#133632] text-center text-white rounded-[40px] cursor-pointer  transition-all duration-300 ease-in-out">
+          Связаться с нами
+        </a>
+      </div>
+
+      <!-- Burger -->
+      <button id="burger" class="xl:hidden w-10 h-5 flex flex-col justify-between items-center"
+        aria-label="Toggle menu">
+        <span class="block w-6 h-[2px] bg-black"></span>
+        <span class="block w-6 h-[2px] bg-black"></span>
+        <span class="block w-6 h-[2px] bg-black"></span>
+      </button>
+
+      <!-- Mobile sidebar -->
+      <div id="sidebar"
+        class="fixed top-0 left-0 h-full w-[70%] bg-[#2A2A2A] text-white p-6 transform -translate-x-full transition-transform duration-300 z-40 xl:hidden">
+        <button id="closeSidebar" class="absolute top-6 right-6 text-2xl" aria-label="Close menu">
+          &times;
+        </button>
+        <nav>
+          <ul class="flex flex-col gap-6 mt-12 text-lg">
+            <li><a href="#" class="hover:underline" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+            <li><a href="#discover" class="hover:underline" data-lang-en="Our tours" data-lang-ru="Наши туры">Our
+                tours</a></li>
+            <li><a href="#reviews" class="hover:underline" data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</a></li>
+            <li><a href="#contact" class="hover:underline" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
+            </li>
+          </ul>
+          <div class="language-switcher mt-5 flex items-center gap-2 text-sm">
+            <button onclick="setLanguage('en')" id="btn-en"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+              EN
+            </button>
+            <span class="text-white/40 select-none">|</span>
+            <button onclick="setLanguage('ru')" id="btn-ru"
+              class="cursor-pointer px-3 py-1 rounded-full text-white bg-white/50 hover:bg-white/20 transition-all">
+              RU
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30 xl:hidden"></div>
+    </header>
+
     <section class="hero relative rounded-[40px] overflow-hidden">
       <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
       <header class="pt-[40px] px-[40px] items-center justify-between xl:justify-start relative z-50 hidden xl:flex">
@@ -218,7 +222,28 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               data-lang-ru="ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»">
               ЧУЙСКИЙ РЕГИОН: «ГОРНЫЕ ВОДОПАДЫ И ПРИРОДНЫЙ ОТДЫХ»
             </h6>
-
+            <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                data-lang-en="Days">
+                Дней
+              </div>
+              <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                <img src="./assets/sun.svg" alt="sun" />
+                <span data-lang-ru="7 дней" data-lang-en="7 days">
+                  7 дней</span>
+                <img src="./assets/moon.svg" alt="sun" />
+                <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                  6 ночей</span>
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                data-lang-ru="Уровень" data-lang-en="Level">
+                Уровень
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Легкий - Средний"
+                data-lang-en="Easy - Moderate">
+                Легкий - Средний
+              </div>
+            </div>
             <p class="discover-desc"
               data-lang-en="Comfortable road trip through scenic corners of Chuy region: from roaring mountain waterfalls to secluded valleys. All inclusive — one-day treks, horseback rides, kayaking, national treats, and workshops in a Kyrgyz village."
               data-lang-ru="Комфортное автопутешествие по живописным уголкам Чуйской области: от шумных горных водопадов до уединённых долин. Всё включено — однодневные трекинги, прогулки на лошадях, каяки, национальные угощения и мастер-классы в кыргызской деревне.">
@@ -244,6 +269,28 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               data-lang-ru="НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»">
               НАРЫНСКИЙ РЕГИОН: «АЛЬПИЙСКИЕ ОЗЕРА И ЗАБЫТЫЕ КАРАВАНЫ»
             </h6>
+            <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                data-lang-en="Days">
+                Дней
+              </div>
+              <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                <img src="./assets/sun.svg" alt="sun" />
+                <span data-lang-ru="7 дней" data-lang-en="7 days">
+                  7 дней</span>
+                <img src="./assets/moon.svg" alt="sun" />
+                <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                  6 ночей</span>
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                data-lang-ru="Уровень" data-lang-en="Level">
+                Уровень
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Легкий - Средний"
+                data-lang-en="Easy - Moderate">
+                Легкий - Средний
+              </div>
+            </div>
             <p class="discover-desc"
               data-lang-en="An exciting journey through Naryn region: visit Kel-Suu Lake in a rocky canyon near the Chinese border, the ancient caravanserai Tash-Rabat, alpine Kol-Ukok Lake surrounded by blooming meadows, and scenic waterfalls in Shirkat or Naryn Gorge."
               data-lang-ru="Захватывающее путешествие по Нарынской области: к озеру Кёль-Суу в скальном каньоне у границы с Китаем, древнему караван-сараю Таш-Рабат, альпийскому озеру Кол-Укок среди цветущих лугов и живописным водопадам в Ширкате или Нарынском ущелье.">
@@ -265,6 +312,28 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               data-lang-ru="ЫСЫК-КУЛЬСКИЙ РЕГИОН: «ОЗЕРО, ГОРЫ И ГОРЯЧИЕ ИСТОЧНИКИ»">
               ISYK-KUL REGION: «LAKE, MOUNTAINS, AND HOT SPRINGS»
             </h6>
+            <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                data-lang-en="Days">
+                Дней
+              </div>
+              <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                <img src="./assets/sun.svg" alt="sun" />
+                <span data-lang-ru="7 дней" data-lang-en="7 days">
+                  7 дней</span>
+                <img src="./assets/moon.svg" alt="sun" />
+                <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                  6 ночей</span>
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                data-lang-ru="Уровень" data-lang-en="Level">
+                Уровень
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Легкий - Средний"
+                data-lang-en="Easy - Moderate">
+                Легкий - Средний
+              </div>
+            </div>
             <p class="discover-desc"
               data-lang-en="Discover the magic of Issyk-Kul — the 'Pearl of the Tien Shan'. Swim in crystal-clear lake waters, explore the red cliffs of Skazka Canyon, and relax in the natural hot springs of Altyn-Arashan. Visit Karakol for culture, cuisine, and mountain views. A perfect blend of nature, adventure, and tradition."
               data-lang-ru="Откройте для себя волшебство Иссык-Куля — «Жемчужины Тянь-Шаня». Купайтесь в кристально чистых водах озера, исследуйте красные скалы каньона Сказка и отдыхайте в горячих источниках Алтын-Арашан. Посетите Каракол с его культурой, кухней и видами на горы. Идеальное сочетание природы, приключений и традиций.">
@@ -286,6 +355,28 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
               data-lang-ru="ЮЖНЫЙ РЕГИОН (ОШ, ДЖАЛАЛ-АБАД): «КУЛЬТУРА И ПРИРОДА ЮГА»">
               SOUTH REGION (OSH, JALAL-ABAD): «CULTURE AND NATURE OF THE SOUTH»
             </h6>
+            <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                data-lang-en="Days">
+                Дней
+              </div>
+              <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                <img src="./assets/sun.svg" alt="sun" />
+                <span data-lang-ru="7 дней" data-lang-en="7 days">
+                  7 дней</span>
+                <img src="./assets/moon.svg" alt="sun" />
+                <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                  6 ночей</span>
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                data-lang-ru="Уровень" data-lang-en="Level">
+                Уровень
+              </div>
+              <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Легкий - Средний"
+                data-lang-en="Easy - Moderate">
+                Легкий - Средний
+              </div>
+            </div>
             <p class="discover-desc"
               data-lang-en="Journey to the vibrant south of Kyrgyzstan — home to sacred mountains, ancient mausoleums, and vast walnut forests. Explore Osh, one of the oldest cities in Central Asia, visit the UNESCO-listed Sulayman-Too, and trek through the Arslanbob forest. Discover alpine lakes like Sary-Chelek and the serene beauty of the Chychkan Gorge. A cultural and natural mosaic of the Kyrgyz south."
               data-lang-ru="Отправьтесь в увлекательное путешествие по югу Кыргызстана — региону священных гор, древних мавзолеев и величественных ореховых лесов. Исследуйте Ош — один из старейших городов Центральной Азии, поднимитесь на Сулейман-Тоо и пройдитесь по лесам Арсланбоба. Полюбуйтесь озером Сары-Челек и еловыми склонами Чычканского ущелья. Мозаика природы и культуры юга Кыргызстана.">
@@ -303,6 +394,155 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
         </div>
       </section>
 
+      <section id="discover" class="discover mt-[120px] md:px-8">
+        <h2
+          class="font-montserrat font-bold text-[36px] sm:text-[48px] md:text-[64px] leading-[110%] tracking-[-1px] uppercase text-[#535353]"
+          data-lang-en="Our Tours" data-lang-ru="наши туры">
+          наши туры
+        </h2>
+        <h6
+          class="font-montserrat font-bold text-[24px] sm:text-[32px] tracking-[-1px] uppercase mt-[40px] md:mt-[80px]"
+          data-lang-en="Adventures across Kyrgyzstan — with love and local knowledge"
+          data-lang-ru="Приключения по Кыргызстану — с любовью и знанием мест">
+          Приключения по Кыргызстану — с любовью и знанием мест
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-[80px]">
+            <div class="discover-item pb-[24px] rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
+              <a class="flex flex-col" href="./ala-kul.html">
+                <img
+                  class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
+                  src="./assets/ala-kul.png" alt="discover" data-lang-en="Kyrgyz cooking class"
+                  data-lang-ru="Мастер-класс по кыргызской кухне" />
+                <h6 class="discover-title" data-lang-en="Horseback Tour to Ala-Kul Lake"
+                  data-lang-ru="конный Тур на озеро ала-кёль">
+                  конный Тур на озеро ала-кёль
+                </h6>
+                <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+                  <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                    data-lang-en="Days">
+                    Дней
+                  </div>
+                  <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                    <img src="./assets/sun.svg" alt="sun" />
+                    <span data-lang-ru="5 дней" data-lang-en="5 days">
+                      5 дней</span>
+                    <img src="./assets/moon.svg" alt="sun" />
+                    <span data-lang-ru="4 ночи" data-lang-en="4 nights">
+                      4 ночи</span>
+                  </div>
+                  <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                    data-lang-ru="Уровень" data-lang-en="Level">
+                    Уровень
+                  </div>
+                  <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Легкий" data-lang-en="Easy">
+                    Легкий
+                  </div>
+                </div>
+                <p class="discover-desc"
+                  data-lang-en="Discover one of the most scenic high-altitude lakes in Kyrgyzstan — Ala-Kul. This adventure combines stunning nature, horseback trekking, waterfalls, mountain gorges, and overnight stays in the wilderness."
+                  data-lang-ru="Откройте для себя одно из самых живописных высокогорных озёр Кыргызстана — Ала-Кёль. Этот маршрут объединяет природу, приключение и кочевую атмосферу: вас ждут конные треки, водопады, ущелья и ночёвки в горах">
+                  Откройте для себя одно из самых живописных высокогорных озёр Кыргызстана — Ала-Кёль. Этот маршрут
+                  объединяет природу, приключение и кочевую атмосферу: вас ждут конные треки, водопады, ущелья и ночёвки
+                  в горах
+                </p>
+
+
+              </a>
+
+            </div>
+            <div class="discover-item pb-[24px] rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
+              <a class="flex flex-col" href="./tracking-tour.html">
+                <img
+                  class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
+                  src="./assets/southern-4.png" alt="discover" data-lang-en="Kyrgyz cooking class"
+                  data-lang-ru="Мастер-класс по кыргызской кухне" />
+                <h6 class="discover-title"
+                  data-lang-en="10-Day Trekking Tour through Talas – Sary-Chelek to Ala-Kul Lake"
+                  data-lang-ru="10-дневный треккинг тур через Талас – Сары-Челек на озеро Ала-Кёль">
+                  10-дневный треккинг тур через Талас – Сары-Челек на озеро Ала-Кёль
+                </h6>
+
+                <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+                  <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                    data-lang-en="Days">
+                    Дней
+                  </div>
+                  <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                    <img src="./assets/sun.svg" alt="sun" />
+                    <span data-lang-ru="10 дней" data-lang-en="10 days">
+                      10 дней</span>
+                    <img src="./assets/moon.svg" alt="sun" />
+                    <span data-lang-ru="9 ночей" data-lang-en="9 nights">
+                      9 ночей</span>
+                  </div>
+                  <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                    data-lang-ru="Уровень" data-lang-en="Level">
+                    Уровень
+                  </div>
+                  <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Средний" data-lang-en="Moderate">
+                    Средний
+                  </div>
+                </div>
+                <p class="discover-desc"
+                  data-lang-en="A route for true adventurers: scenic valleys, mountain passes, and the alpine lakes of Sary-Chelek and Ala-Kul. This rich and unforgettable journey reveals the breathtaking nature of Kyrgyzstan."
+                  data-lang-ru="Маршрут для настоящих искателей приключений: живописные долины, перевалы и озёра Сары-Челек и Ала-Кёль. Это насыщенное и незабываемое путешествие откроет вам прекрасную природу Кыргызстана">
+                  Маршрут для настоящих искателей приключений: живописные долины, перевалы и озёра Сары-Челек и
+                  Ала-Кёль. Это насыщенное и незабываемое путешествие откроет вам прекрасную природу Кыргызстана
+                </p>
+
+              </a>
+
+            </div>
+            <div class="discover-item pb-[24px] rounded-[24px] md:rounded-[40px]  overflow-hidden transition duration-300">
+              <a class="flex flex-col" href="./lake-tulpar.html">
+              <img
+                class="w-full h-[240px] sm:h-[320px] rounded-[24px] md:rounded-[40px] md:h-[360px] 2xl:h-[520px] object-cover"
+                src="./assets/lake-tulpar-1.png" alt="discover" data-lang-en="Kyrgyz cooking class"
+                data-lang-ru="Мастер-класс по кыргызской кухне" />
+                <h6
+                class="discover-title"
+                data-lang-en="Trekking Tour to Tulpar Lake"
+                data-lang-ru="Треккинг тур к озеру Тулпар"
+              >
+                Треккинг тур к озеру Тулпар
+              </h6>
+              
+              <div class="flex flex-col p-[16px] md:p-[24px] gap-2 md:gap-4">
+                <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161]" data-lang-ru="Дней"
+                  data-lang-en="Days">
+                  Дней
+                </div>
+                <div class="flex items-center gap-4 font-medium text-[20px] md:text-[24px]">
+                  <img src="./assets/sun.svg" alt="sun" />
+                  <span data-lang-ru="7 дней" data-lang-en="7 days">
+                    7 дней</span>
+                  <img src="./assets/moon.svg" alt="sun" />
+                  <span data-lang-ru="6 ночей" data-lang-en="6 nights">
+                    6 ночей</span>
+                </div>
+                <div class="font-medium text-[20px] md:text-[24px] leading-[110%] text-[#616161] mt-4"
+                  data-lang-ru="Уровень" data-lang-en="Level">
+                  Уровень
+                </div>
+                <div class="font-medium text-[20px] md:text-[24px]" data-lang-ru="Средний"
+                  data-lang-en="Moderate">
+                  Средний
+                </div>
+              </div>
+              <p
+              class="discover-desc"
+              data-lang-en="A journey to the pearl of the Tien Shan — Lake Issyk-Kul. Discover the Martian landscapes of Skazka Canyon, waterfalls and hot springs in the Barskoon and Altyn-Arashan gorges, and explore the city of Karakol with its oriental architecture, local cuisine, and vibrant bazaar."
+              data-lang-ru="Путешествие по жемчужине Тянь-Шаня — озеру Иссык-Куль. Вас ждут марсианские пейзажи каньона Сказка, водопады и горячие источники в ущельях Барскоон и Алтын-Арашан, а также город Каракол с восточной архитектурой, кухней и колоритным базаром."
+            >
+              Путешествие по жемчужине Тянь-Шаня — озеру Иссык-Куль. Вас ждут марсианские пейзажи каньона Сказка, водопады и горячие источники в ущельях Барскоон и Алтын-Арашан, а также город Каракол с восточной архитектурой, кухней и колоритным базаром.
+            </p>
+            
+            
+              </a>
+
+            </div>
+          </div>
+      </section>
       <section
         class="frame relative w-full h-[420px] sm:h-[540px] md:h-[700px] rounded-[24px] md:rounded-[40px] overflow-hidden mt-[100px] md:mt-[200px] bg-cover bg-no-repeat"
         style="background-image: url('./assets/frame.jpg')">
@@ -414,8 +654,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
         </div>
       </section>
 
-      <section class="about mt-[40px] md:mt-[200px]" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom">
+      <section class="about mt-[40px] md:mt-[200px]" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="about-inner w-full md:w-[80%] ml-auto">
           <h2 class="about-title text-[#235852] text-[32px] sm:text-[48px] md:text-[64px] mb-[24px] md:mb-[32px]"
             data-lang-en="About Us" data-lang-ru="О нас">
@@ -535,13 +774,13 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             Contact Information
           </h2>
           <p class="mb-5">
-            <strong data-lang-en="Address:" data-lang-ru="Адрес:">Address:</strong>
+            <strong class="mr-2" data-lang-en="Address:" data-lang-ru="Адрес:">Address:</strong>
             <span data-lang-en="15 Baba-Ata Street, Bishkek" data-lang-ru="г. Бишкек, ул. Баба-Ата, д.15">15 Baba-Ata
               Street, Bishkek</span>
           </p>
           <div class="mb-5 flex gap-1">
-            <strong data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
-            <div class="flex flex-col gap-2">
+            <strong class="mr-2" data-lang-en="Phone:" data-lang-ru="Телефон:">Phone:</strong>
+            <div class="flex flex-col gap-4">
               <a href="tel:+996700334499" class="hover:underline block">
                 +996 700 334 499
               </a>
@@ -551,7 +790,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
             </div>
           </div>
           <div class="mb-5 flex gap-1">
-            <strong>Email:</strong>
+            <strong class="mr-2">Email:</strong>
             <a href="mailto:contact@infinance.kg" class="hover:underline">
               maxkgtours@gmail.com
             </a>
