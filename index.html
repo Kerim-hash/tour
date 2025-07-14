@@ -17,11 +17,13 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
 "></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
-  <meta property="og:title" content="Kyrgyzstan - Discover" />
-  <meta property="og:description" content="A Land of Mountains, Nomads, and Timeless Traditions" />
+  <meta id="meta-og-title" property="og:title" content="Путешествие по Кыргызстану — Горы, Озёра и Культура Кочевников" />
+  <meta d="meta-og-description" property="og:description" content="Откройте для себя Кыргызстан — страну гор, озёр, треккингов и юрт. Индивидуальные и групповые туры, отдых на Иссык-Куле, конные маршруты, этнотуры и многое другое." />
+  <meta id="meta-description" name="description" content="Планируете отдых в Кыргызстане? Туроператор MaxKG Tour предлагает треккинг, этнотуры, поездки на озера (Иссык-Куль, Ала-Куль, Тулпар-Куль), конные туры, ночёвки в юртах и многое другое." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/hero.jpg" />
   <meta name="format-detection" content="telephone=no" />
+  <meta name="keywords" content="путешествие в Кыргызстан, туры в Кыргызстан, Иссык-Куль, Ала-Куль, Тулпар-Куль, пик Ленина, Алтын-Арашан, Каракол, туроператор Бишкек, треккинг, конные туры, этнотуры, отдых в юртах, эко-туризм, горные походы, фото-туры, MaxKG Tour, местный гид Кыргызстан, экскурсии, отдых в горах Kyrgyzstan tours, travel to Kyrgyzstan, Issyk-Kul Lake, Ala-Kul trek, Lenin Peak base camp, Tulpar-Kul lake, Chuy region, Naryn region, Skazka canyon, Altyn-Arashan hot springs, Karakol city, trekking in Kyrgyzstan, horseback tours, yurt stays, nomadic culture, eco-tourism in Kyrgyzstan, photo tours, guided tours, private tours Kyrgyzstan, group tours Kyrgyzstan, MaxKG Tours, book a tour to Kyrgyzstan, affordable tours Central Asia, local tour guide Bishkek" />
   <title>Tour</title>
 </head>
 
@@ -1024,6 +1026,33 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
       }
     });
   });
+  function updateMetaTags(lang) {
+  const metaData = {
+    en: {
+      title: "Kyrgyzstan Tours & Travel",
+      description: "Plan your trip to Kyrgyzstan with MaxKG Tours. Experience Ala-Kul trek, Issyk-Kul Lake, yurt stays, Lenin Peak base camp, ethnic and eco tours. Book a guided adventure now",
+      ogDescription: "Discover Kyrgyzstan with guided trekking, yurt stays, lakefront relaxation, horseback tours and nomadic adventures. Book affordable group or private tours with MaxKG Tours.",
+    },
+    ru: {
+      title: "Туры по Кыргызстану — Горы, Озера и Кочевая Культура",
+      description: "Исследуйте Кыргызстан: пешие туры, озера, горячие источники и юрты.",
+      ogDescription: "Планируете отдых в Кыргызстане? Туроператор MaxKG Tour предлагает треккинг, этнотуры, поездки на озера (Иссык-Куль, Ала-Куль, Тулпар-Куль), конные туры, ночёвки в юртах и многое другое.",
+    },
+  };
+
+  const meta = metaData[lang];
+
+  document.title = meta.title;
+
+  const desc = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+
+  if (desc) desc.setAttribute("content", meta.description);
+  if (ogTitle) ogTitle.setAttribute("content", meta.title);
+  if (ogDesc) ogDesc.setAttribute("content", meta.ogDescription);
+}
+
   function setLanguage(lang) {
     localStorage.setItem("language", lang);
 
@@ -1045,6 +1074,7 @@ https://cdn.jsdelivr.net/npm/beautify-css@1.0.0/index.min.js
       });
 
     document.documentElement.lang = lang;
+    updateMetaTags(lang)
   }
 
   const savedLang = localStorage.getItem("language") || "en";
